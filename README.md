@@ -11,13 +11,14 @@ Detect harness input formats from infra-published build artifacts. **No hand-mai
 ## Usage
 
 ```bash
-python3 detect_formats.py --output harness_formats.jsonl
-python3 detect_formats.py --max-seeds 500 --output harness_formats.jsonl
+python3 detect_formats.py
+python3 detect_formats.py --max-seeds 500
+python3 detect_formats.py --output out/my_run_harness_formats.jsonl
 ```
 
-Writes two files:
-- `harness_formats.jsonl` — one record per harness
-- `format_index.json` — labels grouped to project/harness lists (regenerated from the JSONL at end of run)
+By default, writes two timestamped files under `out/`:
+- `out/<YYYYMMDD_HHMMSS>_harness_formats.jsonl` — one record per harness
+- `out/<YYYYMMDD_HHMMSS>_format_index.json` — labels grouped to project/harness lists (regenerated from the JSONL at end of run)
 
 ---
 

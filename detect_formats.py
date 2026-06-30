@@ -10,6 +10,7 @@ import os
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 from oss_fuzz_format_detector.download import ensure_project_build
@@ -20,8 +21,27 @@ from oss_fuzz_format_detector.projects import list_projects
 
 DEFAULT_OSS_FUZZ_DIR = Path.home() / 'oss-fuzz'
 DEFAULT_CACHE_DIR = Path.home() / '.cache' / 'oss-fuzz-format-detector'
-DEFAULT_OUTPUT = Path('harness_formats.jsonl')
-DEFAULT_FORMATS_OUTPUT = Path('format_index.json')
+DEFAULT_OUT_DIR = Path('out')
+HARNESS_OUTPUT_SUFFIX = '_harness_formats.jsonl'
+FORMATS_OUTPUT_SUFFIX = '_format_index.json'
+
+
+def default_output_paths(when: datetime | None = None) -> tuple[Path, Path]:
+    """Return timestamp-prefixed output paths under out/."""
+    stamp = (when or datetime.now()).strftime('%Y%m%d_%H%M%S')
+    out_dir = DEFAULT_OUT_DIR
+    return (
+        out_dir / f'{stamp}{HARNESS_OUTPUT_SUFFIX}',
+        out_dir / f'{stamp}{FORMATS_OUTPUT_SUFFIX}',
+    )
+
+
+def companion_formats_output(jsonl_path: Path) -> Path:
+    """Derive the format index path from a harness JSONL path."""
+    name = jsonl_path.name
+    if name.endswith(HARNESS_OUTPUT_SUFFIX):
+        return jsonl_path.with_name(name.replace(HARNESS_OUTPUT_SUFFIX, FORMATS_OUTPUT_SUFFIX))
+    return jsonl_path.with_name('format_index.json')
 
 
 def write_format_index(jsonl_path: Path, formats_path: Path) -> dict[str, int]:
@@ -94,12 +114,23 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--oss-fuzz-dir', type=Path, default=DEFAULT_OSS_FUZZ_DIR)
     parser.add_argument('--cache-dir', type=Path, default=DEFAULT_CACHE_DIR)
-    parser.add_argument('--output', type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument(
+        '--output',
+        type=Path,
+        default=None,
+        help=(
+            'Harness JSONL output '
+            f'(default: {DEFAULT_OUT_DIR}/<timestamp>{HARNESS_OUTPUT_SUFFIX})'
+        ),
+    )
     parser.add_argument(
         '--formats-output',
         type=Path,
         default=None,
-        help='Format index output (default: format_index.json beside --output)',
+        help=(
+            'Format index output '
+            f'(default: matching timestamped file in {DEFAULT_OUT_DIR}/)'
+        ),
     )
     parser.add_argument('--sanitizer', default='address')
     parser.add_argument('--jobs', type=int, default=os.cpu_count() or 1)
@@ -140,6 +171,13 @@ def main(argv: list[str] | None = None) -> int:
         level=logging.DEBUG if args.verbose else logging.INFO,
         format='%(levelname)s: %(message)s',
     )
+
+    if args.output is None:
+        args.output, default_formats = default_output_paths()
+        if args.formats_output is None:
+            args.formats_output = default_formats
+    elif args.formats_output is None:
+        args.formats_output = companion_formats_output(args.output)
 
     max_seeds = args.max_seeds or None
 
@@ -188,10 +226,9 @@ def main(argv: list[str] | None = None) -> int:
         'output': str(args.output),
     }))
 
-    formats_output = args.formats_output or args.output.with_name('format_index.json')
     if args.output.is_file():
-        counts = write_format_index(args.output, formats_output)
-        logging.info('Wrote %d formats to %s', len(counts), formats_output)
+        counts = write_format_index(args.output, args.formats_output)
+        logging.info('Wrote %d formats to %s', len(counts), args.formats_output)
 
     return 0
 
