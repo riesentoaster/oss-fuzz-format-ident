@@ -2,6 +2,7 @@
 ⚠️ USE WITH CAUTION ⚠️ </br>
 ⚠️ NO GUARANTEES ⚠️
 
+⚠️⚠️ Be advised: This will download and use hundreds of gigabytes of disk storage. ⚠️⚠️
 
 # OSS-Fuzz Harness Format Detector
 
