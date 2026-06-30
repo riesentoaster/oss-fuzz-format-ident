@@ -1,0 +1,8 @@
+[project]
+name = "oss-fuzz-format-detector"
+version = "0.1.0"
+description = "Detect OSS-Fuzz harness input formats from infra-published builds"
+requires-python = ">=3.10"
+
+[project.scripts]
+detect-formats = "detect_formats:main"
