@@ -1,0 +1,12 @@
+Project (Benchmark),Harness (Fuzz Target),Format (Seed Type)
+curl_curl_fuzzer_http,curl_fuzzer_http,HTTP response 
+jsoncpp_jsoncpp_fuzzer,jsoncpp_fuzzer,JSON
+lcms-2017-03-21,fuzz-target,ICC profile
+libjpeg-turbo-07-2017,fuzz-target,JPEG
+libpcap_fuzz_both,fuzz_both,PCAP
+libpng-1.2.56,fuzz-target,PNG
+libxml2-v2.9.2,fuzz-target,XML
+php_php-fuzz-parser,php-fuzz-parser,PHP
+vorbis-2017-12-11,fuzz-target,OGG
+woff2-2016-05-06,fuzz-target,WOFF
+zlib_zlib_uncompress_fuzzer,zlib_uncompress_fuzzer,Zlib compressed 

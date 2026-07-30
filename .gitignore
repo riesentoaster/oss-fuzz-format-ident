@@ -1,0 +1,6 @@
+oss-fuzz
+seed_corpora
+.scratch
+*.jsonl
+*.json
+__pycache__
