@@ -4,21 +4,21 @@
 Steps (--steps):
 
 1. download — pull ``*_seed_corpus.zip`` members from each project's latest public
-   GCS build archive into ``seed_corpora/<project>/``. Skips projects whose directory
-   already exists.
+   GCS build archive into ``data/seed_corpora/<project>/``. Skips projects whose
+   directory already exists.
 
 2. profile — for every seed, record the filename extension plus what each tool says
    about the *content*: libmagic (MIME type and description), magika, and siegfried.
    Identical evidence recurs heavily inside a corpus, so seeds are collapsed into one
-   JSON line per *distinct* combination with a ``count``, into ``raw_seeds.jsonl``.
+   JSON line per *distinct* combination with a ``count``, into ``data/raw_seeds.jsonl``.
 
    libmagic's description is recorded but deliberately not used for labelling — it hurt
    precision when measured, see ALGORITHM.md. It is kept because profiling costs hours
    and storing it leaves the question re-testable.
 
 3. identify — decide each harness's input format from the profile, writing
-   ``identified.json`` and ``formats.json``. See ``ALGORITHM.md`` for the reasoning;
-   in short:
+   ``data/identified.json`` and ``data/formats.json``. See ``ALGORITHM.md`` for the
+   reasoning; in short:
 
      * Every tool output is an opaque symbol. The code never inspects, splits or rewrites a
        label, and contains no table of formats. The only knowledge it holds is which outputs
@@ -33,7 +33,7 @@ Steps (--steps):
 Parallelism: one process per harness, each shelling out to batched tool invocations.
 The Python side does almost nothing, so the GIL is irrelevant here.
 
-Usage: python3 extract_seed_corpora.py [--steps download profile identify] [--workers N]
+Usage: python3 identify_harnesses.py [--steps download profile identify] [--workers N]
 """
 
 from __future__ import annotations
@@ -66,8 +66,6 @@ BUCKETS = [
 ]
 SUFFIX = "_seed_corpus.zip"
 ROOT = pathlib.Path(__file__).resolve().parent
-OUT = ROOT / "seed_corpora"
-RAW = ROOT / "raw_seeds.jsonl"
 
 MAGIKA = next(
     (str(p) for p in (ROOT / ".venv/bin/magika",) if p.exists()), shutil.which("magika")
@@ -78,10 +76,6 @@ SF_HOME = ROOT / "tools/siegfried_home/siegfried"
 BATCH = 8192  # seeds per `file` invocation
 TOOL_TIMEOUT = 1800
 DOWNLOAD_RETRIES = 5
-
-# Seeds are unpacked here. Deliberately not /tmp: that is often a RAM-backed tmpfs, and a
-# few of the largest corpora unpacked at once will exhaust it.
-SCRATCH = ROOT / ".scratch"
 
 
 def _parse_indexed(text: str, offset: int, count: int) -> list[str]:
@@ -185,7 +179,7 @@ def profile_zip(task):
     """
     key, path = task
     start = time.time()
-    with tempfile.TemporaryDirectory(dir=SCRATCH) as tmp:
+    with tempfile.TemporaryDirectory() as tmp:
         exts = []
         with zipfile.ZipFile(path) as zf:
             for info in (m for m in zf.infolist() if not m.is_dir()):
@@ -226,18 +220,18 @@ def profile_zip(task):
     )
 
 
-def _harnesses(project):
+def _harnesses(project, corpora: pathlib.Path):
     return [
         (f"{project}/{path.name[: -len(SUFFIX)]}", path)
-        for path in sorted((OUT / project).rglob(f"*{SUFFIX}"))
+        for path in sorted((corpora / project).rglob(f"*{SUFFIX}"))
     ]
 
 
-def download(project):
+def download(project, corpora: pathlib.Path):
     """Download seed-corpus zips for one project, retrying the whole attempt on error."""
     start = time.time()
-    project_dir = OUT / project
-    harnesses = _harnesses(project)
+    project_dir = corpora / project
+    harnesses = _harnesses(project, corpora)
     if project_dir.is_dir():
         return (
             (
@@ -265,7 +259,7 @@ def download(project):
                             for name in z.namelist():
                                 if name.endswith(SUFFIX):
                                     z.extract(name, project_dir)
-                        harnesses = _harnesses(project)
+                        harnesses = _harnesses(project, corpora)
                         label = f"{len(harnesses)} seeds" if harnesses else "0 seeds"
                         return (
                             f"{project}: {label} in {time.time() - start:.2f}s",
@@ -280,11 +274,11 @@ def download(project):
     return f"{project}: error ({last_exc}) after {DOWNLOAD_RETRIES} tries", []
 
 
-def discover(projects):
+def discover(projects, corpora: pathlib.Path):
     """Find already-downloaded seed-corpus zips on disk."""
     work = []
     for project in sorted(set(projects)):
-        work.extend(_harnesses(project))
+        work.extend(_harnesses(project, corpora))
     print(f"discovered {len(work)} seed-corpus zips")
     return work
 
@@ -634,11 +628,12 @@ def decide(evidence, n, links, identity, members, naming):
 def identify(
     per: dict[str, collections.Counter],
     seeds: collections.Counter,
+    outdir: pathlib.Path,
 ):
     """Decide the input format of each harness from its profiled seed corpus.
 
-    Writes ``identified.json`` plus ``formats.json``. See ``ALGORITHM.md`` for the
-    reasoning.
+    Writes ``identified.json`` plus ``formats.json`` under ``outdir``. See
+    ``ALGORITHM.md`` for the reasoning.
     """
 
     start = time.time()
@@ -666,22 +661,25 @@ def identify(
         }
         for cid in sorted(members, key=lambda c: (naming[c][1], naming[c][0]))
     ]
-    (ROOT / "identified.json").write_text(json.dumps(identified, indent=2))
-    (ROOT / "formats.json").write_text(json.dumps(formats, indent=2))
+    (outdir / "identified.json").write_text(json.dumps(identified, indent=2))
+    (outdir / "formats.json").write_text(json.dumps(formats, indent=2))
 
     counts = collections.Counter(v["verdict"] for v in identified.values())
     total = max(1, len(identified))
     for verdict in ("single", "multi", "single_unverified", "ambiguous", "unknown"):
         print(f"  {verdict:<18}{counts[verdict]:>6} ({counts[verdict] / total:>4.0%})")
     print(f"{len(confident)} distinct formats in the confident list")
-    print("wrote identified.json, formats.json")
+    print(f"wrote {outdir / 'identified.json'}, {outdir / 'formats.json'}")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--max-projects", type=int, default=None)
     parser.add_argument(
-        "--raw", type=pathlib.Path, default=RAW, help="profile output path"
+        "--outdir",
+        type=pathlib.Path,
+        default=ROOT / "data",
+        help="directory for seed_corpora/, raw_seeds.jsonl, and results",
     )
     parser.add_argument(
         "--workers",
@@ -697,12 +695,17 @@ def main():
     )
     args = parser.parse_args()
 
+    outdir = args.outdir.resolve()
+    outdir.mkdir(parents=True, exist_ok=True)
+    corpora = outdir / "seed_corpora"
+    raw = outdir / "raw_seeds.jsonl"
+    corpora.mkdir(parents=True, exist_ok=True)
+
     projects = sorted(
         p.name for p in (ROOT / "oss-fuzz" / "projects").iterdir() if p.is_dir()
     )
     if args.max_projects is not None:
         projects = projects[: args.max_projects]
-    OUT.mkdir(parents=True, exist_ok=True)
 
     work = []
     if "download" in args.steps:
@@ -710,9 +713,9 @@ def main():
         start = time.time()
         skipped = 0
         with concurrent.futures.ThreadPoolExecutor(
-            max_workers=os.cpu_count() or 8
+            max_workers=min(os.cpu_count(), 32) or 8
         ) as pool:
-            futures = {pool.submit(download, p): p for p in projects}
+            futures = {pool.submit(download, p, corpora): p for p in projects}
             for done, fut in enumerate(concurrent.futures.as_completed(futures), 1):
                 try:
                     line, harnesses = fut.result()
@@ -737,14 +740,13 @@ def main():
         if not SF:
             sys.exit("siegfried not installed")
         if not work:
-            work = discover(projects)
-        SCRATCH.mkdir(exist_ok=True)
+            work = discover(projects, corpora)
         print("profiling with file, magika, siegfried")
         start, n_seeds = time.time(), 0
         per = collections.defaultdict(collections.Counter)
         seeds = collections.Counter()
         with (
-            args.raw.open("w") as raw,
+            raw.open("w") as raw_f,
             concurrent.futures.ProcessPoolExecutor(max_workers=args.workers) as pool,
         ):
             futures = {pool.submit(profile_zip, w): w[0] for w in work}
@@ -755,7 +757,7 @@ def main():
                 except Exception as exc:
                     print(f"[{done}/{len(work)}] {key}: error ({exc})")
                     continue
-                raw.writelines(json.dumps(r) + "\n" for r in records)
+                raw_f.writelines(json.dumps(r) + "\n" for r in records)
                 for r in records:
                     ingest(r, per, seeds)
                 n_seeds += count
@@ -763,15 +765,15 @@ def main():
         print(
             f"profiled {n_seeds} seeds from {len(work)} harnesses in {time.time() - start:.2f}s"
         )
-        print(f"wrote {args.raw.name}")
+        print(f"wrote {raw}")
         per = dict(per)
 
     if "identify" in args.steps:
         start = time.time()
         if per is None or seeds is None:
-            if not args.raw.exists():
-                raise SystemExit(f"{args.raw} not found; run the profile step first")
-            per, seeds = load(args.raw)
+            if not raw.exists():
+                raise SystemExit(f"{raw} not found; run the profile step first")
+            per, seeds = load(raw)
             print(
                 f"loaded {sum(seeds.values())} seeds from {len(per)} harnesses "
                 f"in {time.time() - start:.1f}s"
@@ -781,7 +783,7 @@ def main():
                 f"using {sum(seeds.values())} seeds from {len(per)} harnesses "
                 f"(in memory)"
             )
-        identify(per, seeds)
+        identify(per, seeds, outdir)
 
 
 if __name__ == "__main__":
