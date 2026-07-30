@@ -66,7 +66,7 @@ SILENT = {
 THETA = 0.40  # how strongly two labels must predict each other to be one format
 MIN_PAIR = 3  # ...over at least this many seeds carrying both
 MIN_PROJ = 1  # ...seen in at least this many projects
-NAME_FLOOR = 0.50  # share of a label's appearances that must fall on its own format before it may lend that format its name
+NAME_FLOOR = 0.50  # fraction of a label's appearances that must co-occur with its strongest linked partner before it may name that format
 PURITY = 0.80  # dominant share among a harness's confirmed seeds
 MIN_CONFIRMED = 2  # confirmed seeds needed to claim a format
 MIN_SHARE = 0.05  # ...covering this share of the corpus
@@ -217,9 +217,11 @@ def link_labels(
     # Name each identity. The component *is* the identity, so any member would serve, but
     # the commonest one alone picks bad names: magika calls FBX files AutoHotkey, and
     # `autohotkey` outnumbers every other member of that class. A label earns the right to
-    # name a class by being specific to it — by spending most of its corpus-wide
-    # appearances on this class rather than scattered across others. Among those, the
-    # commonest wins, which keeps `application/json` from being named after glTF.
+    # name a class by tightly tracking at least one linked partner — the share of its
+    # appearances that co-occur with its strongest neighbour. That rejects scattershot
+    # labels without rewarding polysemous hubs that touch many members of a bridged
+    # component. Among those that clear the floor, the commonest wins, which keeps
+    # `application/json` from being named after glTF.
     def specificity(label):
         inside = max(
             pair[(label, other) if label < other else (other, label)]
@@ -318,6 +320,16 @@ def decide(evidence, n, links, identity, members, naming):
                 "n": n,
             }
 
+        # Confirmed seeds exist but neither multi nor single clears its bar. Do not fall
+        # through to a one-observer claim: that path is only for corpora with no
+        # corroboration at all.
+        return {
+            "verdict": "ambiguous",
+            "format": None,
+            "reason": "no format dominates the confirmed seeds",
+            "n": n,
+        }
+
     # Nothing corroborated. One observer may still be worth reporting, but only if what it
     # said is a label the corpus recognises elsewhere: a label that never links to
     # anything is a tool's private noise, not a format.
@@ -343,13 +355,9 @@ def decide(evidence, n, links, identity, members, naming):
             }
 
     return {
-        "verdict": "ambiguous" if identified else "unknown",
+        "verdict": "unknown",
         "format": None,
-        "reason": (
-            "no format dominates the confirmed seeds"
-            if identified
-            else "no two observers agree on any seed"
-        ),
+        "reason": "no two observers agree on any seed",
         "n": n,
     }
 

@@ -132,12 +132,14 @@ The component is the identity, so any member would serve as its name, but the ch
 visible in every report. Picking the commonest member alone names things badly: magika
 calls FBX files `autohotkey`, and `autohotkey` outnumbers every other member of that class.
 
-A label earns the right to name its class by being *specific* to it — by spending at least
-`NAME_FLOOR` of its corpus-wide appearances on this class rather than scattered across
-others. Among those that qualify, the commonest wins. `magika:autohotkey` has specificity
-0.01 and is rejected; `sf:FBX (Filmbox) Text` has 1.00. Requiring the commonest *among the
-specific* is what keeps `application/json` from being renamed after glTF, which is a
-perfectly specific but very rare member of the JSON class.
+A label earns the right to name its class by tightly tracking at least one linked partner:
+specificity is the share of its corpus-wide appearances that co-occur with its strongest
+neighbour, and must reach `NAME_FLOOR`. Measuring against the single best partner, rather
+than against the whole component, rejects scattershot labels (`magika:autohotkey` scores
+0.01) without rewarding polysemous hubs that touch many members of a bridged component.
+`sf:FBX (Filmbox) Text` scores 1.00. Among those that qualify, the commonest wins, which
+keeps `application/json` from being renamed after glTF — a perfectly partner-specific but
+very rare member of the JSON class.
 
 ## Step 3: Confirm seed by seed
 
@@ -267,7 +269,7 @@ two projects. Retained as `MIN_PROJ`, defaulted to 1.
 | `THETA` | 0.40 | how strongly two labels must predict each other; see the sweep below |
 | `MIN_PAIR` | 3 | seeds carrying both labels before the relation is considered |
 | `MIN_PROJ` | 1 | projects a pair must appear in; see above |
-| `NAME_FLOOR` | 0.50 | share of a label's appearances that must fall on its own class before it may name it |
+| `NAME_FLOOR` | 0.50 | share of a label's appearances that must co-occur with its strongest linked partner before it may name the class |
 | `PURITY` | 0.80 | dominant share among a harness's confirmed seeds |
 | `MIN_CONFIRMED` | 2 | confirmed seeds needed to claim a format, or the whole corpus if smaller |
 | `MIN_SHARE` | 0.05 | share of the corpus that must be confirmed |
