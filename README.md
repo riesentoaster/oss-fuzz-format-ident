@@ -16,6 +16,6 @@ All outputs land in `data/`:
 |----------|-----------------------------------|
 | download | `seed_corpora/`                   |
 | profile  | `raw_seeds.jsonl`                 |
-| identify | `identified.json`, `formats.json` |
+| identify | `identified.json`, `formats.json`, `mapped_formats.json` |
 
 Run one step with `--steps download|profile|identify`. Useful flags: `--max-projects N`, `--workers N`, `--outdir DIR`.

@@ -1,0 +1,405 @@
+- ext: 3mf
+  format: 3MF 3D Manufacturing Format
+- ext: 7z
+  format: 7Zip format
+- ext: arj
+  format: ARJ File Format
+- ext: amf
+  format: Additive Manufacturing File Format
+- ext: a
+  format: Archiver Format
+- ext: aac
+  format: Advanced Audio Coding
+- ext: avi
+  format: Audio/Video Interleaved Format
+- ext: dwg
+  format: AutoCAD Drawing
+- ext: bplist
+  format: Binary Property List
+- ext: lrf
+  format: DJI Low Resolution File
+- ext: cr2
+  format: Canon RAW
+- ext: voc
+  format: Creative Voice File
+- ext: dcm
+  format: Digital Imaging and Communications in Medicine File Format
+- ext: dds
+  format: DirectDraw Surface
+- ext: eac3
+  format: Enhanced AC-3
+- ext: thd
+  format: Dolby TrueHD
+- ext: xml
+  format: Extensible Markup Language
+- format: Fujifilm RAW Image Format
+  ext: raf
+  cluster_name: '{"format": "Fujifilm RAW Image Format", "observer": "sf", "aliases": ["mime:image/x-fuji-raf",
+    "sf:Fujifilm RAW Image Format"]}'
+- ext: hwp
+  format: Hangul Word Processor Document
+- ext: heic
+  format: High Efficiency Image File Format
+- ext: jp2
+  format: JPEG 2000
+- ext: jxr
+  format: JPEG Extended Range
+- ext: jng
+  format: JPEG Network Graphics
+- ext: kra
+  format: Krita Document Format
+- ext: wks
+  format: Lotus 1-2-3 Worksheet
+- ext: lwp
+  format: Lotus WordPro Document
+- ext: mat
+  format: MATLAB Mat File
+- ext: vob
+  format: VOB Format (based on MPEG)
+- ext: pict
+  format: Macintosh PICT Image
+- ext: one
+  format: Microsoft OneNote
+- ext: pst
+  format: Microsoft Outlook Personal Folders (Unicode)
+- ext: pub
+  format: Microsoft Publisher
+- ext: slk
+  format: Microsoft Symbolic Link (SYLK) File
+- ext: vsd
+  format: Microsoft Visio Drawing
+- ext: au
+  format: NeXT/Sun sound
+- ext: nef
+  format: Nikon Digital SLR Camera Raw Image File
+- ext: met
+  format: OS/2 Presentation Manager Metafile (MET)
+- ext: xps
+  format: Open XML Paper Specification
+- ext: exr
+  format: OpenEXR
+- format: Palm OS Database
+  ext: pdb
+  cluster_name: '{"format": "PocketMobi (Palm Resource) File", "observer": "sf", "aliases":
+    ["ext:pdb", "sf:PocketMobi (Palm Resource) File"]}'
+- ext: pcf
+  format: Portable Compiled Format
+- ext: qxd
+  format: QuarkXPress Document
+- ext: mov
+  format: QuickTime File Format (QTFF)
+- ext: stl
+  format: STL (Standard Tessellation Language) ASCII
+- ext: rgb
+  format: Silicon Graphics Image
+- ext: snoop
+  format: Snoop Packet Capture
+- ext: ras
+  format: Sun Raster Image
+- ext: tta
+  format: True Audio
+- ext: woff2
+  format: Web Open Font Format 2
+- ext: exe
+  format: Windows Portable Executable
+- ext: plist
+  format: Apple property list
+- ext: gz
+  format: GZIP
+- ext: json
+  format: JavaScript Object Notation
+- ext: pdf
+  format: Portable Document Format (PDF)
+- ext: cab
+  format: Cabinet Microsoft Windows
+- ext: otf
+  format: OpenType Font File
+- ext: dat
+  format: Microsoft's proprietary Transport Neutral Encapsulation Format (TNEF)
+- ext: vsdx
+  format: Standard-Diagrammformat for Microsoft Visio
+- ext: wp
+  format: WordPerfect for MS-DOS/Windows Document
+- format: Apple Partition Map Disk Image
+  ext: dmg
+  cluster_name: '{"format": "application/x-apple-diskimage", "observer": "mime", "aliases":
+    ["mime:application/x-apple-diskimage", "sf:Apple Partition Map Disk Image"]}'
+- format: Torrent file
+  ext: torrent
+  cluster_name: '{"format": "application/x-bittorrent", "observer": "mime", "aliases": ["magika:torrent",
+    "mime:application/x-bittorrent"]}'
+- ext: bz2
+  format: BZIP2 Compressed Archive
+- ext: z
+  format: Z Compressed Data
+- ext: dll
+  format: Dynamic-Link Library
+  cluster_name: '{"format": "application/x-dosexec", "observer": "mime", "aliases": ["mime:application/x-dosexec",
+    "sf:Windows New Executable"]}'
+- ext: h5
+  format: HDF5
+- ext: iso
+  format: ISO 9660 Disk Image File
+- ext: lz4
+  format: LZ4 (compression algorithm)
+- format: Extensible Database File
+  ext: edb
+  cluster_name: '{"format": "application/x-ms-ese", "observer": "mime", "aliases": ["ext:edb",
+    "mime:application/x-ms-ese"]}'
+- ext: mdb
+  format: Microsoft Access Database File
+- ext: .ndjson
+  format: NDJSON Newline-Delimited JSON
+  cluster_name: '{"format": "application/x-ndjson", "observer": "mime", "aliases": ["magika:ini",
+    "mime:application/x-ndjson"]}'
+- ext: o
+  format: Common Object File Format
+  cluster_name: '{"format": "coff", "observer": "magika", "aliases": ["magika:coff", "sf:Microsoft
+    Office Owner File"]}'
+- ext: rar
+  format: RAR Archive
+- ext: sz
+  format: Snappy (compression)
+- ext: asm
+  format: Assembly language source file
+- ext: flac
+  format: FLAC (Free Lossless Audio Codec)
+- ext: ogg
+  format: Ogg Vorbis Codec Compressed Multimedia File
+- ext: aiff
+  format: Audio Interchange File Format
+- ext: wav
+  format: Waveform Audio (PCMWAVEFORMAT)
+- ext: blend
+  format: Blender 3D
+- ext: bmp
+  format: Windows Bitmap/BMP file format
+- ext: caf
+  format: Apple Core Audio Format
+- ext: cdr
+  format: CorelDraw Drawing
+- ext: msi
+  format: OLE2 Compound Document Format
+  cluster_name: '{"format": "application/x-ole-storage", "observer": "mime", "aliases": ["mime:application/x-ole-storage", "sf:OLE2 Compound Document Format"]}'
+- ext: cpio
+  format: CPIO
+- ext: csv
+  format: Comma-separated values CSV
+  cluster_name: '{"format": "csv", "observer": "magika", "aliases": ["ext:rule", "magika:csv"]}'
+- ext: dbf
+  format: dBASE Database
+- ext: doc
+  format: Microsoft Word Document
+- ext: docx
+  format: Microsoft Word for Windows
+- ext: dts
+  format: DTS Coherent Acoustics (DCA) Audio
+- ext: e00
+  format: ESRI Arc/Info Export File
+- ext: epub
+  format: ePub Format
+- ext: out
+  format: Executable and Linkable Format
+- ext: eml
+  format: Electronic Mail (EML)
+  cluster_name: '{"format": "fbx", "observer": "ext", "aliases": ["ext:cov", "ext:eml",
+    "ext:fbx", "magika:autohotkey", "magika:eml", "mime:message/rfc822", "sf:FBX (Filmbox)
+    Text", "sf:MIME Email"]}'
+- ext: feather
+  format: Arrow IPC File Format
+- ext: ttf
+  format: TrueType Font
+- ext: hdr
+  format: Radiance RGBE image format
+- ext: hqx
+  format: BinHex Binary Text
+- ext: html
+  format: Hypertext Markup Language
+- ext: icc
+  format: ICC Profile
+- ext: ics
+  format: Internet Calendar and Scheduling format
+- ext: avif
+  format: AV1 Image File Format
+- ext: fits
+  format: Flexible Image Transport System
+- ext: gif
+  format: Graphics Interchange Format
+- ext: jxl
+  format: JPEG XL Codestream
+- ext: svg
+  format: Scalable Vector Graphics
+- ext: psd
+  format: Adobe Photoshop
+- ext: ico
+  format: Icon file format
+- ext: j2k
+  format: JPEG 2000 Codestream
+- ext: miff
+  format: Magick Image File Format
+- ext: pam
+  format: Portable Arbitrary Map
+- ext: .groovy
+  format: Groovy Sourcecode
+  cluster_name: '{"format": "groovy", "observer": "magika", "aliases": ["magika:groovy",
+    "mime:text/x-c++"]}'
+- ext: bpm
+  format: Portable Bitmap
+  cluster_name: '{"format": "image/x-portable-bitmap", "observer": "mime", "aliases": ["ext:pbm",
+    "ext:pnm", "mime:image/x-portable-bitmap", "sf:Portable Bitmap Image - ASCII",
+    "sf:Portable Bitmap Image - Binary"]}'
+- ext: qoi
+  format: Quite OK Image Format
+- ext: tga
+  format: Truevision TGA Bitmap
+- ext: wpg
+  format: WordPerfect Graphics Metafile
+- ext: xcf
+  format: Gimp Image File Format
+- ext: img
+  format: Raw disk image (img)
+  cluster_name: '{"format": "img", "observer": "ext", "aliases": ["ext:img", "magika:iso",
+    "mime:application/x-raw-disk-image", "sf:Reduced Resolution Dataset"]}'
+- ext: js
+  format: Javascript Sourcecode
+- ext: jpg
+  format: JPEG File Interchange Forma
+- ext: lua
+  format: Lua Sourcecode
+- ext: lz
+  format: LZ format
+- ext: dylib
+  format: Mach-O
+- ext: max
+  format: Autodesk 3ds Max
+- ext: mid
+  format: Standard MIDI File (SMF)
+- ext: mkv
+  format: Matroska Video
+- ext: glb
+  format: GL Transmission Format (Binary)
+- ext: mp3
+  format: MP3 Audio
+- ext: mpc
+  format: Musepack
+- ext: onnx
+  format: Open Neural Network Exchange
+- ext: rdf
+  format: Resource Description Framework
+  cluster_name: '{"format": "ontology", "observer": "ext", "aliases": ["ext:ontology", "magika:rdf"]}'
+- ext: msg
+  format: Microsoft Outlook Email Message
+- ext: .7
+  format: XV thumbnail
+  cluster_name: '{"format": "p7", "observer": "ext", "aliases": ["ext:p7", "mime:image/x-xv-thumbnail"]}'
+- ext: .pack
+  format: Git  Packfiles
+  cluster_name: '{"format": "pack", "observer": "ext", "aliases": ["ext:pack", "mime:application/x-git"]}'
+- ext: parquet
+  format: Apache Parquet
+  cluster_name: '{"format": "parquet", "observer": "magika", "aliases": ["ext:parquet",
+    "magika:parquet", "sf:Parquet File"]}'
+- ext: pcap
+  format: pcap Packet Capture
+- ext: pcapng
+  format: pcap Next Generation Packet Capture
+- ext: pcx
+  format: PCX (Picture Exchange)
+- ext: phpt
+  format: PHP source test
+- ext: pic
+  format: Softimage 3D Picture File Format
+- ext: pkt
+  format: PKT network simulation file
+- ext: ply
+  format: Polygon File Format
+- ext: png
+  format: Portable Network Graphics
+- ext: ps
+  format: PostScript
+- ext: ppm
+  format: Portable Pixel Map
+- ext: ppt
+  format: Microsoft Powerpoint Presentation
+- ext: pptx
+  format: Microsoft Powerpoint for Windows
+- ext: py
+  format: Python Sourcecode
+  cluster_name: '{"format": "py", "observer": "ext", "aliases": ["ext:py", "ext:vrt", "magika:python",
+    "mime:text/x-script.python", "sf:Virtual Format (Raster)"]}'
+- ext: raucb
+  format: RAUC bundle
+- ext: rtf
+  format: Rich Text Format
+- ext: rb
+  format: Ruby sourcecode
+- ext: sdc
+  format: StarOffice Calc
+- ext: sdw
+  format: StarOffice Writer
+- ext: sol
+  format: Flash Local Shared Object
+- ext: spv
+  format: (SPIR-V) Standard Portable Intermediate Representation
+  cluster_name: '{"format": "spv", "observer": "ext", "aliases": ["ext:spv", "sf:SPIR-V"]}'
+- ext: spx
+  format: Ogg Speex Codec Multimedia File
+- ext: sql
+  format: Structured Query Language
+- ext: swf
+  format: Macromedia Flash file (compiled animation/playback file)
+- ext: tar
+  format: Tape Archive Format
+- ext: wrl
+  format: WRL file format
+  cluster_name: '{"format": "tcl", "observer": "magika", "aliases": ["ext:test", "ext:wrl",
+    "magika:tcl", "mime:model/vrml", "sf:Virtual Reality Modeling Language"]}'
+- ext: vtt
+  format: Web Video Text Tracks (WebVTT) Format
+- ext: po
+  format: Portable Object (PO) for i18n
+  cluster_name: '{"format": "text/x-po", "observer": "mime", "aliases": ["ext:po", "magika:po",
+    "mime:text/x-po"]}'
+- ext: sh
+  format: shell
+- ext: tif
+  format: Tagged Image File Format
+- ext: tim
+  format: TIM  (PlayStation graphics)
+- ext: ts
+  format: MPEG-2 Transport Stream
+- ext: txt
+  format: Text File
+- ext: vba
+  format: MS Visual Basic source (VBA)
+  cluster_name: '{"format": "vba", "observer": "magika", "aliases": ["ext:output", "magika:vba"]}'
+- ext: mp4
+  format: MPEG-4 Media File (MP4)
+- ext: webm
+  format: WebM
+- ext: wasm
+  format: WebAssembly
+- ext: webp
+  format: WebP
+- ext: wmf
+  format: Windows Metafile Image
+- ext: wri
+  format: Microsoft Write Document
+  cluster_name: '{"format": "wri", "observer": "ext", "aliases": ["ext:wri", "sf:Microsoft
+    Word for MS-DOS Document"]}'
+- ext: xbm
+  format: X-Windows Bitmap Image
+- ext: xls
+  format: Microsoft Excel 97-2003 Workbook (xls)
+- ext: xlsx
+  format: Microsoft Excel for Windows (XML)
+- ext: xpm
+  format: X-Windows Pixmap Image
+- ext: xz
+  format: XZ File Format
+- ext: yaml
+  format: YAML File
+- ext: zip
+  format: ZIP Format
+- ext: zst
+  format: Zstandard compressed file

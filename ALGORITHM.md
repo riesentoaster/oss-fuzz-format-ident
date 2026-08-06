@@ -62,10 +62,12 @@ are but how many *independent* ones.
 | magika | ML-based content classification |
 | siegfried | PRONOM format identification |
 
-Each observer gets a small list of values that mean *"nothing to say"* —
-`application/octet-stream`, `unknown`, a missing extension, siegfried's `Plain Text File`.
-These are discarded rather than treated as labels. This is a null list, not a format
-mapping: it says which outputs are silence, not what any format is.
+Each observer gets a small null list of outputs that mean *"nothing to say"* — missing
+extensions, catch-all unknowns, empty files, undifferentiated plain text, and similar
+non-answers. These are discarded rather than treated as labels. The list says which
+outputs are silence, not what any format is; the concrete values live in the code, not
+here. Treating undifferentiated plain text as silence matters: a text format only
+contributes when an observer names it more specifically than "plain text".
 
 Two libmagic outputs are deliberately **not** used. Its `--extension` guess was only ever
 useful as an alias source, and aliases are now derived. Its human-readable description is
@@ -122,8 +124,8 @@ identically at THETA 0.4, 0.5 and 0.6, whereas raising the threshold alone trade
 correct links elsewhere.
 
 Connected components of the surviving relation are the format identities. Single linkage
-is safe *only* because the relation is this strict: measured on the corpus it yields 320
-identities of 2 to 6 members — usually one label per observer — rather than the transitive
+is safe *only* because the relation is this strict: measured on the corpus it yields 314
+identities of 2 to 8 members — usually one label per observer — rather than the transitive
 blob that string similarity collapses into.
 
 ### Naming an identity
@@ -143,8 +145,9 @@ very rare member of the JSON class.
 
 ## Step 3: Confirm seed by seed
 
-A seed is **confirmed** as a format when two observers *with different sources* put linked
-labels on **that seed**. Two outputs of one tool are not two opinions; they fail together.
+A seed is **confirmed** as a format when two observers *with different sources* put
+*directly linked* labels on **that seed** — a shared identity is not enough if the pair
+was never an edge. Two outputs of one tool are not two opinions; they fail together.
 
 Requiring agreement on the same seed is the single most important correctness property
 here. The obvious alternative — compare what each observer says about the corpus as a
@@ -166,8 +169,10 @@ wrong: `.o` against `.so`, `.xlsm` against `.xlsx`, `html` against `xhtml+xml`.
 2. **Single**, if one identity dominates the confirmed seeds and enough of them exist.
    This is the confident output.
 3. **Single, unverified**, if nothing was confirmed but one observer is consistent across
-   most of the corpus **and the label it used belongs to some identity**. That last clause
-   is a derived quality gate: it keeps `magika:crt` and `ext:tar` while dropping `ext:bin`,
+   most of the corpus **and the label it used belongs to some identity**. Observers are
+   tried in a fixed order (filename first), and the reported name is that observer's own
+   label, not the identity's canonical name. The identity membership clause is a derived
+   quality gate: it keeps `magika:crt` and `ext:tar` while dropping `ext:bin`,
    `ext:raw`, `magika:textproto` and `magika:go` — labels no other tool ever confirms
    anywhere in OSS-Fuzz, and therefore a tool's private vocabulary rather than a format.
    It is a filter and not a guarantee: `ext:txt` survives it on the strength of one
@@ -187,15 +192,16 @@ decided identically anyway, since identical evidence yields identical verdicts.
 
 | verdict | harnesses | share | median seeds |
 | --- | ---: | ---: | ---: |
-| single | 805 | 22% | 38 |
-| multi | 152 | 4% | 426 |
-| single_unverified | 526 | 15% | 3 |
-| ambiguous | 336 | 9% | |
-| unknown | 1784 | 50% | |
+| single | 794 | 22% | 37 |
+| multi | 154 | 4% | 426 |
+| single_unverified | 434 | 12% | 2 |
+| ambiguous | 432 | 12% | |
+| unknown | 1805 | 50% | |
 
-805 confident verdicts span 175 distinct formats. Corroboration is usually broad rather
-than marginal: 456 of them have all four observers agreeing, and the median confident
-harness has 99% of its corpus confirmed.
+794 confident verdicts span 173 distinct formats. Corroboration is usually broad rather
+than marginal: 444 of them land on an identity that has members from all four observers
+(confirmation itself only needs two), and the median confident harness has 99% of its
+corpus confirmed.
 
 On the one independent check available — the harness name often names its format, and the
 algorithm never reads names — confident verdicts agree with the name 92% of the time,

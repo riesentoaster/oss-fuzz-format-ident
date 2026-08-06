@@ -1,0 +1,1666 @@
+[
+  {
+    "format": "3MF 3D Manufacturing Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:3mf",
+      "magika:nupkg",
+      "sf:3MF 3D Manufacturing Format"
+    ]
+  },
+  {
+    "format": "7Zip format",
+    "observer": "sf",
+    "aliases": [
+      "ext:7z",
+      "magika:sevenzip",
+      "mime:application/x-7z-compressed",
+      "sf:7Zip format"
+    ]
+  },
+  {
+    "format": "ARJ File Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:arj",
+      "mime:application/x-arj",
+      "sf:ARJ File Format"
+    ]
+  },
+  {
+    "format": "Additive Manufacturing File Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:amf",
+      "mime:application/x-amf",
+      "sf:Additive Manufacturing File Format"
+    ]
+  },
+  {
+    "format": "Archiver Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:a",
+      "mime:application/x-archive",
+      "sf:Archiver Format"
+    ]
+  },
+  {
+    "format": "Audio Data Transport Stream",
+    "observer": "sf",
+    "aliases": [
+      "ext:aac",
+      "mime:audio/x-hx-aac-adts",
+      "sf:Audio Data Transport Stream"
+    ]
+  },
+  {
+    "format": "Audio/Video Interleaved Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:avi",
+      "mime:video/x-msvideo",
+      "sf:Audio/Video Interleaved Format"
+    ]
+  },
+  {
+    "format": "AutoCAD Drawing",
+    "observer": "sf",
+    "aliases": [
+      "ext:dwg",
+      "magika:dwg",
+      "mime:image/vnd.dwg",
+      "sf:AutoCAD Drawing"
+    ]
+  },
+  {
+    "format": "Binary Property List",
+    "observer": "sf",
+    "aliases": [
+      "ext:bplist",
+      "magika:applebplist",
+      "sf:Binary Property List"
+    ]
+  },
+  {
+    "format": "Broad Band eBook",
+    "observer": "sf",
+    "aliases": [
+      "ext:lrf",
+      "sf:Broad Band eBook"
+    ]
+  },
+  {
+    "format": "Canon RAW",
+    "observer": "sf",
+    "aliases": [
+      "ext:cr2",
+      "mime:image/x-canon-cr2",
+      "sf:Canon RAW"
+    ]
+  },
+  {
+    "format": "Creative Voice File",
+    "observer": "sf",
+    "aliases": [
+      "ext:voc",
+      "mime:audio/x-unknown",
+      "sf:Creative Voice File"
+    ]
+  },
+  {
+    "format": "Digital Imaging and Communications in Medicine File Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:dcm",
+      "magika:dicom",
+      "mime:application/dicom",
+      "sf:Digital Imaging and Communications in Medicine File Format"
+    ]
+  },
+  {
+    "format": "DirectDraw Surface",
+    "observer": "sf",
+    "aliases": [
+      "ext:dds",
+      "sf:DirectDraw Surface"
+    ]
+  },
+  {
+    "format": "Dolby Digital AC-3",
+    "observer": "sf",
+    "aliases": [
+      "ext:eac3",
+      "mime:audio/vnd.dolby.dd-raw",
+      "sf:Dolby Digital AC-3"
+    ]
+  },
+  {
+    "format": "Dolby MLP Lossless Audio",
+    "observer": "sf",
+    "aliases": [
+      "ext:thd",
+      "sf:Dolby MLP Lossless Audio"
+    ]
+  },
+  {
+    "format": "Extensible Markup Language",
+    "observer": "sf",
+    "aliases": [
+      "ext:xml",
+      "magika:xml",
+      "mime:text/xml",
+      "sf:Extensible Markup Language"
+    ]
+  },
+  {
+    "format": "Fujifilm RAW Image Format",
+    "observer": "sf",
+    "aliases": [
+      "mime:image/x-fuji-raf",
+      "sf:Fujifilm RAW Image Format"
+    ]
+  },
+  {
+    "format": "Hangul Word Processor Document",
+    "observer": "sf",
+    "aliases": [
+      "ext:hwp",
+      "mime:application/x-hwp",
+      "sf:Hangul Word Processor Document"
+    ]
+  },
+  {
+    "format": "High Efficiency Image File Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:heic",
+      "mime:image/heif",
+      "sf:High Efficiency Image File Format"
+    ]
+  },
+  {
+    "format": "JP2 (JPEG 2000 part 1)",
+    "observer": "sf",
+    "aliases": [
+      "ext:jp2",
+      "magika:jp2",
+      "mime:image/jp2",
+      "sf:JP2 (JPEG 2000 part 1)"
+    ]
+  },
+  {
+    "format": "JPEG Extended Range",
+    "observer": "sf",
+    "aliases": [
+      "ext:jxr",
+      "mime:image/jxr",
+      "sf:JPEG Extended Range"
+    ]
+  },
+  {
+    "format": "JPEG Network Graphics",
+    "observer": "sf",
+    "aliases": [
+      "ext:jng",
+      "mime:video/x-jng",
+      "sf:JPEG Network Graphics"
+    ]
+  },
+  {
+    "format": "Krita Document Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:kra",
+      "sf:Krita Document Format"
+    ]
+  },
+  {
+    "format": "Lotus 1-2-3 Worksheet",
+    "observer": "sf",
+    "aliases": [
+      "ext:wks",
+      "mime:application/vnd.lotus-1-2-3",
+      "sf:Lotus 1-2-3 Worksheet"
+    ]
+  },
+  {
+    "format": "Lotus WordPro Document",
+    "observer": "sf",
+    "aliases": [
+      "ext:lwp",
+      "mime:application/vnd.lotus-wordpro",
+      "sf:Lotus WordPro Document"
+    ]
+  },
+  {
+    "format": "MATLAB Mat File",
+    "observer": "sf",
+    "aliases": [
+      "ext:mat",
+      "ext:mtp",
+      "mime:application/x-matlab-data",
+      "sf:MATLAB Mat File"
+    ]
+  },
+  {
+    "format": "MPEG-2 Elementary Stream",
+    "observer": "sf",
+    "aliases": [
+      "ext:vob",
+      "mime:video/mpeg",
+      "sf:MPEG-2 Elementary Stream"
+    ]
+  },
+  {
+    "format": "Macintosh PICT Image",
+    "observer": "sf",
+    "aliases": [
+      "ext:pict",
+      "sf:Macintosh PICT Image"
+    ]
+  },
+  {
+    "format": "Microsoft OneNote",
+    "observer": "sf",
+    "aliases": [
+      "ext:one",
+      "magika:one",
+      "sf:Microsoft OneNote"
+    ]
+  },
+  {
+    "format": "Microsoft Outlook Personal Folders (Unicode)",
+    "observer": "sf",
+    "aliases": [
+      "ext:pst",
+      "sf:Microsoft Outlook Personal Folders (Unicode)"
+    ]
+  },
+  {
+    "format": "Microsoft Publisher",
+    "observer": "sf",
+    "aliases": [
+      "ext:pub",
+      "sf:Microsoft Publisher"
+    ]
+  },
+  {
+    "format": "Microsoft Symbolic Link (SYLK) File",
+    "observer": "sf",
+    "aliases": [
+      "ext:slk",
+      "mime:application/x-sylk",
+      "sf:Microsoft Symbolic Link (SYLK) File"
+    ]
+  },
+  {
+    "format": "Microsoft Visio Drawing",
+    "observer": "sf",
+    "aliases": [
+      "ext:vsd",
+      "sf:Microsoft Visio Drawing"
+    ]
+  },
+  {
+    "format": "NeXT/Sun sound",
+    "observer": "sf",
+    "aliases": [
+      "ext:au",
+      "mime:audio/basic",
+      "sf:NeXT/Sun sound"
+    ]
+  },
+  {
+    "format": "Nikon Digital SLR Camera Raw Image File",
+    "observer": "sf",
+    "aliases": [
+      "ext:nef",
+      "sf:Nikon Digital SLR Camera Raw Image File"
+    ]
+  },
+  {
+    "format": "OS/2 Presentation Manager Metafile (MET)",
+    "observer": "sf",
+    "aliases": [
+      "ext:met",
+      "sf:OS/2 Presentation Manager Metafile (MET)"
+    ]
+  },
+  {
+    "format": "Open XML Paper Specification",
+    "observer": "sf",
+    "aliases": [
+      "ext:xps",
+      "sf:Open XML Paper Specification"
+    ]
+  },
+  {
+    "format": "OpenEXR",
+    "observer": "sf",
+    "aliases": [
+      "ext:exr",
+      "mime:image/x-exr",
+      "sf:OpenEXR"
+    ]
+  },
+  {
+    "format": "PocketMobi (Palm Resource) File",
+    "observer": "sf",
+    "aliases": [
+      "ext:pdb",
+      "sf:PocketMobi (Palm Resource) File"
+    ]
+  },
+  {
+    "format": "Portable Compiled Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:pcf",
+      "sf:Portable Compiled Format"
+    ]
+  },
+  {
+    "format": "QuarkXPress Document",
+    "observer": "sf",
+    "aliases": [
+      "ext:qxd",
+      "mime:application/x-quark-xpress-3",
+      "sf:QuarkXPress Document"
+    ]
+  },
+  {
+    "format": "Quicktime",
+    "observer": "sf",
+    "aliases": [
+      "ext:mov",
+      "magika:qt",
+      "mime:video/quicktime",
+      "sf:Quicktime"
+    ]
+  },
+  {
+    "format": "STL (Standard Tessellation Language) ASCII",
+    "observer": "sf",
+    "aliases": [
+      "ext:stl",
+      "magika:stltext",
+      "mime:application/x-ebu-stl",
+      "sf:EBU Subtitling Data Exchange Format",
+      "sf:STL (Standard Tessellation Language) ASCII"
+    ]
+  },
+  {
+    "format": "Silicon Graphics Image",
+    "observer": "sf",
+    "aliases": [
+      "ext:rgb",
+      "sf:Silicon Graphics Image"
+    ]
+  },
+  {
+    "format": "Snoop Packet Capture",
+    "observer": "sf",
+    "aliases": [
+      "ext:snoop",
+      "sf:Snoop Packet Capture"
+    ]
+  },
+  {
+    "format": "Sun Raster Image",
+    "observer": "sf",
+    "aliases": [
+      "ext:ras",
+      "sf:Sun Raster Image"
+    ]
+  },
+  {
+    "format": "True Audio",
+    "observer": "sf",
+    "aliases": [
+      "ext:tta",
+      "sf:True Audio"
+    ]
+  },
+  {
+    "format": "Web Open Font Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:woff2",
+      "magika:woff2",
+      "mime:font/woff2",
+      "sf:Web Open Font Format"
+    ]
+  },
+  {
+    "format": "Windows Portable Executable",
+    "observer": "sf",
+    "aliases": [
+      "ext:exe",
+      "magika:pebin",
+      "mime:application/vnd.microsoft.portable-executable",
+      "sf:Windows Portable Executable"
+    ]
+  },
+  {
+    "format": "appleplist",
+    "observer": "magika",
+    "aliases": [
+      "ext:plist",
+      "magika:appleplist",
+      "sf:XML Property List"
+    ]
+  },
+  {
+    "format": "application/gzip",
+    "observer": "mime",
+    "aliases": [
+      "ext:gz",
+      "magika:gzip",
+      "mime:application/gzip",
+      "sf:GZIP Format"
+    ]
+  },
+  {
+    "format": "application/json",
+    "observer": "mime",
+    "aliases": [
+      "ext:gltf",
+      "ext:json",
+      "magika:json",
+      "mime:application/json",
+      "sf:GL Transmission Format (Text)"
+    ]
+  },
+  {
+    "format": "application/pdf",
+    "observer": "mime",
+    "aliases": [
+      "ext:pdf",
+      "magika:pdf",
+      "mime:application/pdf"
+    ]
+  },
+  {
+    "format": "application/vnd.ms-cab-compressed",
+    "observer": "mime",
+    "aliases": [
+      "ext:cab",
+      "mime:application/vnd.ms-cab-compressed",
+      "sf:Windows Cabinet File"
+    ]
+  },
+  {
+    "format": "application/vnd.ms-opentype",
+    "observer": "mime",
+    "aliases": [
+      "ext:otf",
+      "magika:otf",
+      "mime:application/vnd.ms-opentype",
+      "sf:OpenType Font File"
+    ]
+  },
+  {
+    "format": "application/vnd.ms-tnef",
+    "observer": "mime",
+    "aliases": [
+      "ext:dat",
+      "mime:application/vnd.ms-tnef"
+    ]
+  },
+  {
+    "format": "application/vnd.ms-visio.drawing.main+xml",
+    "observer": "mime",
+    "aliases": [
+      "ext:vsdx",
+      "mime:application/vnd.ms-visio.drawing.main+xml"
+    ]
+  },
+  {
+    "format": "application/vnd.wordperfect",
+    "observer": "mime",
+    "aliases": [
+      "ext:wp",
+      "mime:application/vnd.wordperfect",
+      "sf:WordPerfect for MS-DOS/Windows Document"
+    ]
+  },
+  {
+    "format": "application/x-apple-diskimage",
+    "observer": "mime",
+    "aliases": [
+      "mime:application/x-apple-diskimage",
+      "sf:Apple Partition Map Disk Image"
+    ]
+  },
+  {
+    "format": "application/x-bittorrent",
+    "observer": "mime",
+    "aliases": [
+      "magika:torrent",
+      "mime:application/x-bittorrent"
+    ]
+  },
+  {
+    "format": "application/x-bzip2",
+    "observer": "mime",
+    "aliases": [
+      "ext:bz2",
+      "magika:bzip",
+      "mime:application/x-bzip2",
+      "sf:BZIP2 Compressed Archive"
+    ]
+  },
+  {
+    "format": "application/x-compress",
+    "observer": "mime",
+    "aliases": [
+      "ext:z",
+      "mime:application/x-compress",
+      "sf:Z Compressed Data"
+    ]
+  },
+  {
+    "format": "application/x-dosexec",
+    "observer": "mime",
+    "aliases": [
+      "mime:application/x-dosexec",
+      "sf:Windows New Executable"
+    ]
+  },
+  {
+    "format": "application/x-hdf5",
+    "observer": "mime",
+    "aliases": [
+      "ext:h5",
+      "magika:h5",
+      "mime:application/x-hdf5",
+      "sf:HDF5"
+    ]
+  },
+  {
+    "format": "application/x-iso9660-image",
+    "observer": "mime",
+    "aliases": [
+      "ext:iso",
+      "mime:application/x-iso9660-image",
+      "sf:ISO 9660 Disk Image File"
+    ]
+  },
+  {
+    "format": "application/x-lz4",
+    "observer": "mime",
+    "aliases": [
+      "ext:lz4",
+      "mime:application/x-lz4"
+    ]
+  },
+  {
+    "format": "application/x-ms-ese",
+    "observer": "mime",
+    "aliases": [
+      "ext:edb",
+      "mime:application/x-ms-ese"
+    ]
+  },
+  {
+    "format": "application/x-msaccess",
+    "observer": "mime",
+    "aliases": [
+      "ext:mdb",
+      "mime:application/x-msaccess",
+      "sf:Microsoft Access Database File"
+    ]
+  },
+  {
+    "format": "application/x-ndjson",
+    "observer": "mime",
+    "aliases": [
+      "magika:ini",
+      "mime:application/x-ndjson"
+    ]
+  },
+  {
+    "format": "application/x-object",
+    "observer": "mime",
+    "aliases": [
+      "ext:o",
+      "mime:application/x-object"
+    ]
+  },
+  {
+    "format": "application/x-ole-storage",
+    "observer": "mime",
+    "aliases": [
+      "mime:application/x-ole-storage",
+      "sf:OLE2 Compound Document Format"
+    ]
+  },
+  {
+    "format": "application/x-rar",
+    "observer": "mime",
+    "aliases": [
+      "ext:rar",
+      "magika:rar",
+      "mime:application/x-rar",
+      "sf:RAR Archive"
+    ]
+  },
+  {
+    "format": "application/x-snappy-framed",
+    "observer": "mime",
+    "aliases": [
+      "ext:sz",
+      "mime:application/x-snappy-framed"
+    ]
+  },
+  {
+    "format": "asm",
+    "observer": "ext",
+    "aliases": [
+      "ext:asm",
+      "magika:asm",
+      "mime:application/x-wine-extension-ini"
+    ]
+  },
+  {
+    "format": "audio/flac",
+    "observer": "mime",
+    "aliases": [
+      "ext:flac",
+      "magika:flac",
+      "mime:audio/flac",
+      "sf:FLAC (Free Lossless Audio Codec)"
+    ]
+  },
+  {
+    "format": "audio/ogg",
+    "observer": "mime",
+    "aliases": [
+      "ext:ogg",
+      "magika:ogg",
+      "mime:audio/ogg",
+      "sf:Ogg Vorbis Codec Compressed Multimedia File"
+    ]
+  },
+  {
+    "format": "audio/x-aiff",
+    "observer": "mime",
+    "aliases": [
+      "ext:aiff",
+      "mime:audio/x-aiff",
+      "sf:Audio Interchange File Format"
+    ]
+  },
+  {
+    "format": "audio/x-wav",
+    "observer": "mime",
+    "aliases": [
+      "ext:wav",
+      "mime:audio/x-wav",
+      "sf:Waveform Audio (PCMWAVEFORMAT)"
+    ]
+  },
+  {
+    "format": "blend",
+    "observer": "ext",
+    "aliases": [
+      "ext:blend",
+      "mime:application/x-blender",
+      "sf:Blender 3D"
+    ]
+  },
+  {
+    "format": "bmp",
+    "observer": "ext",
+    "aliases": [
+      "ext:bmp",
+      "magika:bmp",
+      "mime:image/bmp",
+      "sf:Windows Bitmap"
+    ]
+  },
+  {
+    "format": "caf",
+    "observer": "ext",
+    "aliases": [
+      "ext:caf",
+      "sf:Apple Core Audio Format"
+    ]
+  },
+  {
+    "format": "cdr",
+    "observer": "ext",
+    "aliases": [
+      "ext:cdr",
+      "mime:application/vnd.corel-draw",
+      "sf:CorelDraw Drawing"
+    ]
+  },
+  {
+    "format": "coff",
+    "observer": "magika",
+    "aliases": [
+      "magika:coff",
+      "sf:Microsoft Office Owner File"
+    ]
+  },
+  {
+    "format": "cpio",
+    "observer": "ext",
+    "aliases": [
+      "ext:cpio",
+      "mime:application/x-cpio",
+      "sf:CPIO"
+    ]
+  },
+  {
+    "format": "csv",
+    "observer": "magika",
+    "aliases": [
+      "ext:rule",
+      "magika:csv"
+    ]
+  },
+  {
+    "format": "dBASE Database",
+    "observer": "sf",
+    "aliases": [
+      "ext:dbf",
+      "mime:application/x-dbf",
+      "sf:dBASE Database"
+    ]
+  },
+  {
+    "format": "der",
+    "observer": "ext",
+    "aliases": [
+      "ext:der",
+      "ext:p7m",
+      "magika:crt",
+      "sf:PKCS #7 Cryptographic Message File"
+    ]
+  },
+  {
+    "format": "doc",
+    "observer": "magika",
+    "aliases": [
+      "ext:doc",
+      "magika:doc",
+      "mime:application/msword",
+      "sf:Microsoft Word Document"
+    ]
+  },
+  {
+    "format": "docx",
+    "observer": "magika",
+    "aliases": [
+      "ext:docx",
+      "magika:docx",
+      "mime:application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "sf:Microsoft Word for Windows"
+    ]
+  },
+  {
+    "format": "dts",
+    "observer": "ext",
+    "aliases": [
+      "ext:dts",
+      "sf:DTS Coherent Acoustics (DCA) Audio"
+    ]
+  },
+  {
+    "format": "e00",
+    "observer": "ext",
+    "aliases": [
+      "ext:e00",
+      "sf:ESRI Arc/Info Export File"
+    ]
+  },
+  {
+    "format": "ePub Format",
+    "observer": "sf",
+    "aliases": [
+      "ext:epub",
+      "magika:epub",
+      "mime:application/epub+zip",
+      "sf:ePub Format"
+    ]
+  },
+  {
+    "format": "elf",
+    "observer": "magika",
+    "aliases": [
+      "ext:out",
+      "magika:elf",
+      "mime:application/x-executable",
+      "mime:application/x-pie-executable",
+      "sf:Executable and Linkable Format"
+    ]
+  },
+  {
+    "format": "fbx",
+    "observer": "ext",
+    "aliases": [
+      "ext:cov",
+      "ext:eml",
+      "ext:fbx",
+      "magika:autohotkey",
+      "magika:eml",
+      "mime:message/rfc822",
+      "sf:FBX (Filmbox) Text",
+      "sf:MIME Email"
+    ]
+  },
+  {
+    "format": "feather",
+    "observer": "ext",
+    "aliases": [
+      "ext:feather",
+      "sf:Apache Arrow IPC Format"
+    ]
+  },
+  {
+    "format": "font/sfnt",
+    "observer": "mime",
+    "aliases": [
+      "ext:ttf",
+      "magika:ttf",
+      "mime:font/sfnt",
+      "sf:TrueType Font"
+    ]
+  },
+  {
+    "format": "groovy",
+    "observer": "magika",
+    "aliases": [
+      "magika:groovy",
+      "mime:text/x-c++"
+    ]
+  },
+  {
+    "format": "hdr",
+    "observer": "ext",
+    "aliases": [
+      "ext:hdr",
+      "sf:Radiance RGBE Image Format"
+    ]
+  },
+  {
+    "format": "hqx",
+    "observer": "ext",
+    "aliases": [
+      "ext:hqx",
+      "mime:application/mac-binhex40",
+      "sf:BinHex Binary Text"
+    ]
+  },
+  {
+    "format": "html",
+    "observer": "ext",
+    "aliases": [
+      "ext:html",
+      "magika:html",
+      "mime:text/html",
+      "sf:Hypertext Markup Language"
+    ]
+  },
+  {
+    "format": "icc",
+    "observer": "ext",
+    "aliases": [
+      "ext:icc",
+      "mime:application/vnd.iccprofile",
+      "sf:ICC Profile"
+    ]
+  },
+  {
+    "format": "ics",
+    "observer": "ext",
+    "aliases": [
+      "ext:ics",
+      "magika:ics",
+      "mime:text/calendar",
+      "sf:Internet Calendar and Scheduling format"
+    ]
+  },
+  {
+    "format": "image/avif",
+    "observer": "mime",
+    "aliases": [
+      "ext:avif",
+      "magika:mp4",
+      "mime:image/avif",
+      "sf:AV1 Image File Format"
+    ]
+  },
+  {
+    "format": "image/fits",
+    "observer": "mime",
+    "aliases": [
+      "ext:fits",
+      "magika:proteindb",
+      "mime:image/fits",
+      "sf:Flexible Image Transport System"
+    ]
+  },
+  {
+    "format": "image/gif",
+    "observer": "mime",
+    "aliases": [
+      "ext:gif",
+      "magika:gif",
+      "mime:image/gif",
+      "sf:Graphics Interchange Format"
+    ]
+  },
+  {
+    "format": "image/jxl",
+    "observer": "mime",
+    "aliases": [
+      "ext:jxl",
+      "magika:swf",
+      "mime:image/jxl",
+      "sf:JPEG XL Codestream"
+    ]
+  },
+  {
+    "format": "image/svg+xml",
+    "observer": "mime",
+    "aliases": [
+      "ext:svg",
+      "magika:svg",
+      "mime:image/svg+xml"
+    ]
+  },
+  {
+    "format": "image/vnd.adobe.photoshop",
+    "observer": "mime",
+    "aliases": [
+      "ext:psd",
+      "magika:psd",
+      "mime:image/vnd.adobe.photoshop",
+      "sf:Adobe Photoshop"
+    ]
+  },
+  {
+    "format": "image/vnd.microsoft.icon",
+    "observer": "mime",
+    "aliases": [
+      "ext:ico",
+      "mime:image/vnd.microsoft.icon",
+      "sf:Icon file format"
+    ]
+  },
+  {
+    "format": "image/x-jp2-codestream",
+    "observer": "mime",
+    "aliases": [
+      "ext:j2k",
+      "mime:image/x-jp2-codestream",
+      "sf:JPEG 2000 Codestream"
+    ]
+  },
+  {
+    "format": "image/x-miff",
+    "observer": "mime",
+    "aliases": [
+      "ext:miff",
+      "mime:image/x-miff",
+      "sf:Magick Image File Format"
+    ]
+  },
+  {
+    "format": "image/x-portable-arbitrarymap",
+    "observer": "mime",
+    "aliases": [
+      "ext:pam",
+      "mime:image/x-portable-arbitrarymap",
+      "sf:Portable Any Map"
+    ]
+  },
+  {
+    "format": "image/x-portable-bitmap",
+    "observer": "mime",
+    "aliases": [
+      "ext:pbm",
+      "ext:pnm",
+      "mime:image/x-portable-bitmap",
+      "sf:Portable Bitmap Image - ASCII",
+      "sf:Portable Bitmap Image - Binary"
+    ]
+  },
+  {
+    "format": "image/x-qoi",
+    "observer": "mime",
+    "aliases": [
+      "ext:qoi",
+      "mime:image/x-qoi"
+    ]
+  },
+  {
+    "format": "image/x-tga",
+    "observer": "mime",
+    "aliases": [
+      "ext:tga",
+      "mime:image/x-tga",
+      "sf:Truevision TGA Bitmap"
+    ]
+  },
+  {
+    "format": "image/x-wordperfect-graphics",
+    "observer": "mime",
+    "aliases": [
+      "ext:wpg",
+      "mime:image/x-wordperfect-graphics",
+      "sf:WordPerfect Graphics Metafile"
+    ]
+  },
+  {
+    "format": "image/x-xcf",
+    "observer": "mime",
+    "aliases": [
+      "ext:xcf",
+      "mime:image/x-xcf",
+      "sf:Gimp Image File Format"
+    ]
+  },
+  {
+    "format": "img",
+    "observer": "ext",
+    "aliases": [
+      "ext:img",
+      "magika:iso",
+      "mime:application/x-raw-disk-image",
+      "sf:Reduced Resolution Dataset"
+    ]
+  },
+  {
+    "format": "javascript",
+    "observer": "magika",
+    "aliases": [
+      "ext:js",
+      "magika:javascript",
+      "mime:application/javascript"
+    ]
+  },
+  {
+    "format": "jpg",
+    "observer": "ext",
+    "aliases": [
+      "ext:jpg",
+      "magika:jpeg",
+      "mime:image/jpeg",
+      "sf:JPEG File Interchange Format"
+    ]
+  },
+  {
+    "format": "lua",
+    "observer": "ext",
+    "aliases": [
+      "ext:lua",
+      "magika:lua"
+    ]
+  },
+  {
+    "format": "lz",
+    "observer": "ext",
+    "aliases": [
+      "ext:lz",
+      "mime:application/x-lzip"
+    ]
+  },
+  {
+    "format": "macho",
+    "observer": "magika",
+    "aliases": [
+      "ext:dylib",
+      "magika:macho",
+      "mime:application/x-mach-binary",
+      "sf:Mach-O"
+    ]
+  },
+  {
+    "format": "max",
+    "observer": "ext",
+    "aliases": [
+      "ext:max",
+      "magika:msi",
+      "sf:3DS Max"
+    ]
+  },
+  {
+    "format": "mid",
+    "observer": "ext",
+    "aliases": [
+      "ext:mid",
+      "magika:midi",
+      "mime:audio/midi",
+      "sf:MIDI Audio"
+    ]
+  },
+  {
+    "format": "mkv",
+    "observer": "magika",
+    "aliases": [
+      "ext:mkv",
+      "magika:mkv",
+      "mime:video/x-matroska",
+      "sf:Matroska"
+    ]
+  },
+  {
+    "format": "model/gltf-binary",
+    "observer": "mime",
+    "aliases": [
+      "ext:glb",
+      "mime:model/gltf-binary",
+      "sf:GL Transmission Format (Binary)"
+    ]
+  },
+  {
+    "format": "mp3",
+    "observer": "ext",
+    "aliases": [
+      "ext:mp3",
+      "magika:mp3",
+      "mime:audio/mpeg"
+    ]
+  },
+  {
+    "format": "mpc",
+    "observer": "ext",
+    "aliases": [
+      "ext:mpc",
+      "mime:audio/x-musepack"
+    ]
+  },
+  {
+    "format": "onnx",
+    "observer": "ext",
+    "aliases": [
+      "ext:onnx",
+      "magika:onnx"
+    ]
+  },
+  {
+    "format": "ontology",
+    "observer": "ext",
+    "aliases": [
+      "ext:ontology",
+      "magika:rdf"
+    ]
+  },
+  {
+    "format": "outlook",
+    "observer": "magika",
+    "aliases": [
+      "ext:msg",
+      "magika:outlook",
+      "mime:application/vnd.ms-outlook",
+      "sf:Microsoft Outlook Email Message"
+    ]
+  },
+  {
+    "format": "p7",
+    "observer": "ext",
+    "aliases": [
+      "ext:p7",
+      "mime:image/x-xv-thumbnail"
+    ]
+  },
+  {
+    "format": "pack",
+    "observer": "ext",
+    "aliases": [
+      "ext:pack",
+      "mime:application/x-git"
+    ]
+  },
+  {
+    "format": "parquet",
+    "observer": "magika",
+    "aliases": [
+      "ext:parquet",
+      "magika:parquet",
+      "sf:Parquet File"
+    ]
+  },
+  {
+    "format": "pcap",
+    "observer": "ext",
+    "aliases": [
+      "ext:pcap",
+      "magika:pcap",
+      "mime:application/vnd.tcpdump.pcap",
+      "sf:pcap Packet Capture"
+    ]
+  },
+  {
+    "format": "pcap Next Generation Packet Capture",
+    "observer": "sf",
+    "aliases": [
+      "ext:pcapng",
+      "sf:pcap Next Generation Packet Capture"
+    ]
+  },
+  {
+    "format": "pcx",
+    "observer": "ext",
+    "aliases": [
+      "ext:pcx",
+      "mime:image/x-pcx",
+      "sf:PCX"
+    ]
+  },
+  {
+    "format": "pgp",
+    "observer": "ext",
+    "aliases": [
+      "ext:asc",
+      "ext:pgp",
+      "magika:pem",
+      "mime:application/pgp-keys"
+    ]
+  },
+  {
+    "format": "php",
+    "observer": "magika",
+    "aliases": [
+      "ext:phpt",
+      "magika:php",
+      "mime:text/x-php"
+    ]
+  },
+  {
+    "format": "pic",
+    "observer": "ext",
+    "aliases": [
+      "ext:pic",
+      "sf:Softimage 3D Picture File Format"
+    ]
+  },
+  {
+    "format": "pkt",
+    "observer": "ext",
+    "aliases": [
+      "ext:pkt",
+      "mime:application/x-dc42-floppy-image"
+    ]
+  },
+  {
+    "format": "ply",
+    "observer": "ext",
+    "aliases": [
+      "ext:ply",
+      "sf:Polygon File Format"
+    ]
+  },
+  {
+    "format": "png",
+    "observer": "magika",
+    "aliases": [
+      "ext:png",
+      "magika:png",
+      "mime:image/png",
+      "sf:Portable Network Graphics"
+    ]
+  },
+  {
+    "format": "postscript",
+    "observer": "magika",
+    "aliases": [
+      "ext:ps",
+      "magika:postscript",
+      "mime:application/postscript",
+      "sf:PostScript"
+    ]
+  },
+  {
+    "format": "ppm",
+    "observer": "ext",
+    "aliases": [
+      "ext:ppm",
+      "mime:image/x-portable-pixmap",
+      "sf:Portable Pixel Map - Binary"
+    ]
+  },
+  {
+    "format": "ppt",
+    "observer": "ext",
+    "aliases": [
+      "ext:ppt",
+      "magika:ppt",
+      "mime:application/vnd.ms-powerpoint",
+      "sf:Microsoft Powerpoint Presentation"
+    ]
+  },
+  {
+    "format": "pptx",
+    "observer": "magika",
+    "aliases": [
+      "ext:pptx",
+      "magika:pptx",
+      "mime:application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "sf:Microsoft Powerpoint for Windows"
+    ]
+  },
+  {
+    "format": "py",
+    "observer": "ext",
+    "aliases": [
+      "ext:py",
+      "ext:vrt",
+      "magika:python",
+      "mime:text/x-script.python",
+      "sf:Virtual Format (Raster)"
+    ]
+  },
+  {
+    "format": "raucb",
+    "observer": "ext",
+    "aliases": [
+      "ext:raucb",
+      "magika:squashfs"
+    ]
+  },
+  {
+    "format": "rtf",
+    "observer": "magika",
+    "aliases": [
+      "ext:rtf",
+      "magika:rtf",
+      "mime:text/rtf",
+      "sf:Rich Text Format"
+    ]
+  },
+  {
+    "format": "ruby",
+    "observer": "magika",
+    "aliases": [
+      "ext:rb",
+      "magika:ruby",
+      "mime:text/x-ruby"
+    ]
+  },
+  {
+    "format": "sdc",
+    "observer": "ext",
+    "aliases": [
+      "ext:sdc",
+      "sf:StarOffice Calc"
+    ]
+  },
+  {
+    "format": "sdw",
+    "observer": "ext",
+    "aliases": [
+      "ext:sdw",
+      "sf:StarOffice Writer"
+    ]
+  },
+  {
+    "format": "sol",
+    "observer": "ext",
+    "aliases": [
+      "ext:sol",
+      "magika:solidity"
+    ]
+  },
+  {
+    "format": "spv",
+    "observer": "ext",
+    "aliases": [
+      "ext:spv",
+      "sf:SPIR-V"
+    ]
+  },
+  {
+    "format": "spx",
+    "observer": "ext",
+    "aliases": [
+      "ext:spx",
+      "sf:Ogg Speex Codec Multimedia File"
+    ]
+  },
+  {
+    "format": "sql",
+    "observer": "magika",
+    "aliases": [
+      "ext:sql",
+      "magika:sql",
+      "sf:Harvard Graphics Show"
+    ]
+  },
+  {
+    "format": "swf",
+    "observer": "ext",
+    "aliases": [
+      "ext:swf",
+      "mime:application/x-shockwave-flash",
+      "sf:Macromedia Flash"
+    ]
+  },
+  {
+    "format": "tar",
+    "observer": "magika",
+    "aliases": [
+      "ext:tar",
+      "magika:tar",
+      "mime:application/x-tar",
+      "sf:Tape Archive Format"
+    ]
+  },
+  {
+    "format": "tcl",
+    "observer": "magika",
+    "aliases": [
+      "ext:test",
+      "ext:wrl",
+      "magika:tcl",
+      "mime:model/vrml",
+      "sf:Virtual Reality Modeling Language"
+    ]
+  },
+  {
+    "format": "text/vtt",
+    "observer": "mime",
+    "aliases": [
+      "ext:vtt",
+      "magika:vtt",
+      "mime:text/vtt",
+      "sf:Web Video Text Tracks (WebVTT) Format"
+    ]
+  },
+  {
+    "format": "text/x-po",
+    "observer": "mime",
+    "aliases": [
+      "ext:po",
+      "magika:po",
+      "mime:text/x-po"
+    ]
+  },
+  {
+    "format": "text/x-shellscript",
+    "observer": "mime",
+    "aliases": [
+      "ext:sh",
+      "magika:shell",
+      "mime:text/x-shellscript"
+    ]
+  },
+  {
+    "format": "tiff",
+    "observer": "magika",
+    "aliases": [
+      "ext:tif",
+      "magika:tiff",
+      "mime:image/tiff",
+      "sf:Tagged Image File Format"
+    ]
+  },
+  {
+    "format": "tim",
+    "observer": "ext",
+    "aliases": [
+      "ext:tim",
+      "mime:image/x-sony-tim"
+    ]
+  },
+  {
+    "format": "ts",
+    "observer": "ext",
+    "aliases": [
+      "ext:ts",
+      "mime:video/MP2T",
+      "sf:MPEG-2 Transport Stream"
+    ]
+  },
+  {
+    "format": "txt",
+    "observer": "ext",
+    "aliases": [
+      "ext:txt",
+      "magika:lisp"
+    ]
+  },
+  {
+    "format": "vba",
+    "observer": "magika",
+    "aliases": [
+      "ext:output",
+      "magika:vba"
+    ]
+  },
+  {
+    "format": "video/mp4",
+    "observer": "mime",
+    "aliases": [
+      "ext:mp4",
+      "mime:video/mp4",
+      "sf:MPEG-4 Media File"
+    ]
+  },
+  {
+    "format": "video/webm",
+    "observer": "mime",
+    "aliases": [
+      "ext:webm",
+      "magika:webm",
+      "mime:video/webm",
+      "sf:WebM"
+    ]
+  },
+  {
+    "format": "wasm",
+    "observer": "ext",
+    "aliases": [
+      "ext:wasm",
+      "magika:wasm",
+      "mime:application/wasm"
+    ]
+  },
+  {
+    "format": "webp",
+    "observer": "ext",
+    "aliases": [
+      "ext:webp",
+      "magika:webp",
+      "mime:image/webp",
+      "sf:WebP"
+    ]
+  },
+  {
+    "format": "wmf",
+    "observer": "ext",
+    "aliases": [
+      "ext:wmf",
+      "magika:wmf",
+      "mime:image/wmf",
+      "sf:Windows Metafile Image"
+    ]
+  },
+  {
+    "format": "wri",
+    "observer": "ext",
+    "aliases": [
+      "ext:wri",
+      "sf:Microsoft Word for MS-DOS Document"
+    ]
+  },
+  {
+    "format": "xbm",
+    "observer": "ext",
+    "aliases": [
+      "ext:xbm",
+      "magika:c",
+      "sf:X-Windows Bitmap Image"
+    ]
+  },
+  {
+    "format": "xls",
+    "observer": "magika",
+    "aliases": [
+      "ext:xls",
+      "magika:xls",
+      "mime:application/vnd.ms-excel",
+      "sf:Microsoft Excel 97-2003 Workbook (xls)"
+    ]
+  },
+  {
+    "format": "xlsx",
+    "observer": "magika",
+    "aliases": [
+      "ext:xlsx",
+      "magika:xlsx",
+      "mime:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sf:Microsoft Excel for Windows"
+    ]
+  },
+  {
+    "format": "xpm",
+    "observer": "ext",
+    "aliases": [
+      "ext:xpm",
+      "mime:image/x-xpixmap",
+      "sf:X-Windows Pixmap Image"
+    ]
+  },
+  {
+    "format": "xz",
+    "observer": "magika",
+    "aliases": [
+      "ext:xz",
+      "magika:xz",
+      "mime:application/x-xz",
+      "sf:XZ File Format"
+    ]
+  },
+  {
+    "format": "yaml",
+    "observer": "magika",
+    "aliases": [
+      "ext:yaml",
+      "magika:yaml"
+    ]
+  },
+  {
+    "format": "zip",
+    "observer": "magika",
+    "aliases": [
+      "ext:zip",
+      "magika:zip",
+      "mime:application/zip",
+      "sf:ZIP Format"
+    ]
+  },
+  {
+    "format": "zst",
+    "observer": "ext",
+    "aliases": [
+      "ext:zst",
+      "mime:application/zstd"
+    ]
+  }
+]

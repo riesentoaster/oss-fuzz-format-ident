@@ -17,8 +17,8 @@ Steps (--steps):
    and storing it leaves the question re-testable.
 
 3. identify — decide each harness's input format from the profile, writing
-   ``data/identified.json`` and ``data/formats.json``. See ``ALGORITHM.md`` for the
-   reasoning; in short:
+   ``data/identified.json``, ``data/formats.json``, and ``data/mapped_formats.json``.
+   See ``ALGORITHM.md`` for the reasoning; in short:
 
      * Every tool output is an opaque symbol. The code never inspects, splits or rewrites a
        label, and contains no table of formats. The only knowledge it holds is which outputs
@@ -227,6 +227,23 @@ def _harnesses(project, corpora: pathlib.Path):
     ]
 
 
+def _nonempty_corpus(path: pathlib.Path) -> bool:
+    """True if the zip has at least one seed with non-zero size."""
+    try:
+        with zipfile.ZipFile(path) as zf:
+            return any(i.file_size > 0 for i in zf.infolist() if not i.is_dir())
+    except zipfile.BadZipFile:
+        return False
+
+
+def _print_stats(n_projects: int, work: list) -> None:
+    nonempty = sum(1 for _, path in work if _nonempty_corpus(path))
+    print(
+        f"{n_projects} projects, {len(work)} harnesses, "
+        f"{nonempty} with non-empty seed corpora"
+    )
+
+
 def download(project, corpora: pathlib.Path):
     """Download seed-corpus zips for one project, retrying the whole attempt on error."""
     start = time.time()
@@ -279,7 +296,7 @@ def discover(projects, corpora: pathlib.Path):
     work = []
     for project in sorted(set(projects)):
         work.extend(_harnesses(project, corpora))
-    print(f"discovered {len(work)} seed-corpus zips")
+    _print_stats(len(set(projects)), work)
     return work
 
 
@@ -632,8 +649,8 @@ def identify(
 ):
     """Decide the input format of each harness from its profiled seed corpus.
 
-    Writes ``identified.json`` plus ``formats.json`` under ``outdir``. See
-    ``ALGORITHM.md`` for the reasoning.
+    Writes ``identified.json``, ``formats.json``, and ``mapped_formats.json`` under
+    ``outdir``. See ``ALGORITHM.md`` for the reasoning.
     """
 
     start = time.time()
@@ -650,9 +667,6 @@ def identify(
     }
     print(f"classified {len(identified)} harnesses in {time.time() - start:.1f}s")
 
-    confident = sorted(
-        {v["format"] for v in identified.values() if v["verdict"] == "single"}
-    )
     formats = [
         {
             "format": naming[cid][1],
@@ -661,15 +675,39 @@ def identify(
         }
         for cid in sorted(members, key=lambda c: (naming[c][1], naming[c][0]))
     ]
+    # Identities claimed by at least one single / single_unverified harness.
+    # Match via aliases: single_unverified stores the observer's own label as
+    # ``format``, which may differ from the identity's canonical name.
+    alias_to_cid = {f"{o}:{l}": cid for cid, mems in members.items() for o, l in mems}
+    mapped_cids = set()
+    for v in identified.values():
+        if v.get("verdict") not in ("single", "single_unverified"):
+            continue
+        for alias in v.get("aliases") or ():
+            cid = alias_to_cid.get(alias)
+            if cid is not None:
+                mapped_cids.add(cid)
+                break
+    mapped_formats = [
+        {
+            "format": naming[cid][1],
+            "observer": naming[cid][0],
+            "aliases": [f"{o}:{l}" for o, l in members[cid]],
+        }
+        for cid in sorted(mapped_cids, key=lambda c: (naming[c][1], naming[c][0]))
+    ]
     (outdir / "identified.json").write_text(json.dumps(identified, indent=2))
     (outdir / "formats.json").write_text(json.dumps(formats, indent=2))
+    (outdir / "mapped_formats.json").write_text(json.dumps(mapped_formats, indent=2))
 
     counts = collections.Counter(v["verdict"] for v in identified.values())
     total = max(1, len(identified))
     for verdict in ("single", "multi", "single_unverified", "ambiguous", "unknown"):
         print(f"  {verdict:<18}{counts[verdict]:>6} ({counts[verdict] / total:>4.0%})")
-    print(f"{len(confident)} distinct formats in the confident list")
-    print(f"wrote {outdir / 'identified.json'}, {outdir / 'formats.json'}")
+    print(
+        f"wrote {outdir / 'identified.json'}, {outdir / 'formats.json'}, "
+        f"{outdir / 'mapped_formats.json'} ({len(mapped_formats)} mapped)"
+    )
 
 
 def main():
@@ -732,6 +770,11 @@ def main():
             print(f" ({skipped} projects with no seeds, cached)", end="")
         print()
 
+    if not work:
+        work = discover(projects, corpora)
+    else:
+        _print_stats(len(projects), work)
+
     per = None
     seeds = None
     if "profile" in args.steps:
@@ -739,8 +782,6 @@ def main():
             sys.exit("magika not installed")
         if not SF:
             sys.exit("siegfried not installed")
-        if not work:
-            work = discover(projects, corpora)
         print("profiling with file, magika, siegfried")
         start, n_seeds = time.time(), 0
         per = collections.defaultdict(collections.Counter)

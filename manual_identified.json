@@ -1,0 +1,48 @@
+{
+  "wuffs/zlib_fuzzer": {
+    "verdict": "single",
+    "format": "Zlib compressed",
+    "observer": "mime",
+    "aliases": [
+      "ext:zlib",
+      "magika:zlibstream",
+      "mime:application/zlib"
+    ],
+    "sources": [
+      "filename",
+      "libmagic",
+      "magika"
+    ],
+    "reason": "manual: entire buffer is zlib; Jenkins hash only toggles decoder quirks",
+    "role": "extra",
+    "manual": true
+  },
+  "zlib/zlib_uncompress_fuzzer": {
+    "verdict": "single",
+    "format": "Zlib compressed",
+    "observer": "mime",
+    "aliases": [
+      "ext:zlib",
+      "magika:zlibstream",
+      "mime:application/zlib"
+    ],
+    "sources": [
+      "filename",
+      "libmagic",
+      "magika"
+    ],
+    "reason": "manual: FuzzBench target; raw zlib via uncompress(); no formats.json cluster",
+    "role": "fuzzbench_no_cluster",
+    "manual": true
+  },
+  "zlib/zlib_uncompress2_fuzzer": {
+    "verdict": "single",
+    "format": "Zlib compressed",
+    "observer": null,
+    "aliases": [],
+    "sources": [],
+    "reason": "manual: raw zlib via uncompress2() on entire input; no framing",
+    "role": "extra",
+    "manual": true
+  }
+}

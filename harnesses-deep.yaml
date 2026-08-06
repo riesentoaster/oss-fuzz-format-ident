@@ -1,0 +1,574 @@
+formats:
+  json:
+    - project: apache-commons-configuration
+      harness: JSONConfigurationReadFuzzer
+    - project: apache-commons-configuration
+      harness: JSONConfigurationWriteFuzzer
+    - project: apache-commons-lang
+      harness: StringEscapeUtilsFuzzer
+    - project: apache-felix-dev
+      harness: JSONParserFuzzer
+    - project: arduinojson
+      harness: json_fuzzer
+    - project: argo
+      harness: fuzz_workflow_server
+    - project: boost-json
+      harness: fuzz_basic_parser
+    - project: boost-json
+      harness: fuzz_direct_parse
+    - project: boost-json
+      harness: fuzz_parse
+    - project: boost-json
+      harness: fuzz_parser
+    - project: brpc
+      harness: fuzz_json
+    - project: cilium
+      harness: fuzz
+    - project: cmake
+      harness: cmJSONParserFuzzer
+    - project: config-validator
+      harness: fuzz_config_validator
+    - project: cosign
+      harness: FuzzEvaluatePolicyAgainstJSON
+    - project: cosign
+      harness: FuzzGenerateStatement
+    - project: cosign
+      harness: FuzzValidateJSON_cue
+    - project: cosign
+      harness: FuzzValidateJSON_rego
+    - project: cpython3
+      harness: fuzz_json_loads
+    - project: envoy
+      harness: json_fuzz_test
+    - project: envoy
+      harness: mcp_parser_fuzz_test
+    - project: fastjson2
+      harness: JsonFuzzer
+    - project: fwupd
+      harness: json_fuzzer
+    - project: geos
+      harness: fuzz_geojson
+    - project: golang-protobuf
+      harness: jsonfuzz
+    - project: gpsd
+      harness: FuzzClient
+    - project: gpsd
+      harness: FuzzJson
+    - project: gwt
+      harness: JsonArrayFuzzer
+    - project: gwt
+      harness: JsonObjectFuzzer
+    - project: hcl
+      harness: FuzzParse
+    - project: hostap
+      harness: json
+    - project: istio
+      harness: fuzz_config_validation2
+    - project: jackson-core
+      harness: DataInputFuzzer
+    - project: jackson-core
+      harness: JsonFuzzer
+    - project: jackson-databind
+      harness: ObjectReaderFuzzer
+    - project: jackson-databind
+      harness: ObjectWriterFuzzer
+    - project: jansson
+      harness: json_load_dump_fuzzer
+    - project: jettison
+      harness: JsonFuzzer
+    - project: jose4j
+      harness: JsonUtilFuzzer
+    - project: json-flattener
+      harness: FlattenFuzzer
+    - project: json-flattener
+      harness: RoundTripFuzzer
+    - project: json-flattener
+      harness: UnflattenFuzzer
+    - project: json-sanitizer
+      harness: DenylistFuzzer
+    - project: json-sanitizer
+      harness: IdempotenceFuzzer
+    - project: json-sanitizer
+      harness: ValidJsonFuzzer
+    - project: json-smart-v2
+      harness: JSONParserFuzzer
+    - project: jsonparser
+      harness: fuzzdelete
+    - project: jsonparser
+      harness: fuzzeachkey
+    - project: jsonparser
+      harness: fuzzgetboolean
+    - project: jsonparser
+      harness: fuzzgetfloat
+    - project: jsonparser
+      harness: fuzzgetint
+    - project: jsonparser
+      harness: fuzzgetstring
+    - project: jsonparser
+      harness: fuzzgetunsafestring
+    - project: jsonparser
+      harness: fuzzobjecteach
+    - project: jsonparser
+      harness: fuzzparsebool
+    - project: jsonparser
+      harness: fuzzparsefloat
+    - project: jsonparser
+      harness: fuzzparseint
+    - project: jsonparser
+      harness: fuzzparsestring
+    - project: jsonparser
+      harness: fuzzset
+    - project: jsonparser
+      harness: fuzztokenstart
+    - project: kea
+      harness: fuzz_dhcp_parser4
+    - project: kea
+      harness: fuzz_dhcp_parser6
+    - project: kea
+      harness: fuzz_dhcpsrv
+    - project: keycloak
+      harness: JoseParserFuzzer
+    - project: keycloak
+      harness: JwkParserFuzzer
+    - project: krb5
+      harness: fuzz_json
+    - project: kubernetes
+      harness: fuzz_write_token
+    - project: libplist
+      harness: jplist_fuzzer
+    - project: libra
+      harness: json_rpc_service
+    - project: libyang
+      harness: lyd_parse_mem_json
+    - project: log4j2
+      harness: json
+    - project: monero
+      harness: load-from-json_fuzz_tests
+    - project: mosquitto
+      harness: dynsec_fuzz_load
+    - project: ntopng
+      harness: fuzz_zmq_flow
+    - project: open5gs
+      harness: sbi_nf_profile_fuzz
+    - project: open5gs
+      harness: sbi_sm_context_fuzz
+    - project: opentelemetry
+      harness: FuzzRequestUnmarshalJSON_plogotlp
+    - project: opentelemetry
+      harness: FuzzRequestUnmarshalJSON_pmetricotlp
+    - project: opentelemetry
+      harness: FuzzRequestUnmarshalJSON_pprofileotlp
+    - project: opentelemetry
+      harness: FuzzRequestUnmarshalJSON_ptraceotlp
+    - project: opentelemetry
+      harness: FuzzResponseUnmarshalJSON_plogotlp
+    - project: opentelemetry
+      harness: FuzzResponseUnmarshalJSON_pmetricotlp
+    - project: opentelemetry
+      harness: FuzzResponseUnmarshalJSON_pprofileotlp
+    - project: opentelemetry
+      harness: FuzzResponseUnmarshalJSON_ptraceotlp
+    - project: opentelemetry
+      harness: FuzzUnmarshalJSONTraces_ptrace
+    - project: opentelemetry
+      harness: FuzzUnmarshalJsonLogs_plogs
+    - project: opentelemetry
+      harness: FuzzUnmarshalMetrics_pmetric
+    - project: osquery
+      harness: osqueryfuzz-config
+    - project: phosphor-state-manager
+      harness: target_parser_fuzzer
+    - project: php
+      harness: php-fuzz-json
+    - project: pjsip
+      harness: fuzz-json
+    - project: postgis
+      harness: geojson_import_fuzzer
+    - project: powsybl-java
+      harness: DeserializeFuzzer
+    - project: powsybl-java
+      harness: LoadFlowFuzzer
+    - project: powsybl-java
+      harness: ParseFuzzer
+    - project: proftpd
+      harness: fuzzer
+    - project: python3-libraries
+      harness: fuzzer-json
+    - project: qpdf
+      harness: future_json_fuzzer
+    - project: qpdf
+      harness: json_fuzzer
+    - project: qt
+      harness: qtbase_corelib_serialization_qjsondocument_fromjson
+    - project: ruby
+      harness: fuzz_json
+    - project: sigstore-go
+      harness: FuzzVerifier
+    - project: sigstore-go
+      harness: FuzzVerifySignatureWithArtifactDigest
+    - project: sigstore-go
+      harness: FuzzVerifySignatureWithArtifactWithoutDigest
+    - project: sigstore-go
+      harness: FuzzVerifySignatureWithoutArtifactOrDigest
+    - project: sigstore-go
+      harness: FuzzVerifySignedTimestampWithThreshold
+    - project: sigstore-go
+      harness: FuzzVerifySignedTimestampWithoutThreshold
+    - project: sigstore-go
+      harness: FuzzVerifyTlogEntry
+    - project: sigstore-python
+      harness: fuzz_verify_artifact
+    - project: skia
+      harness: skjson
+    - project: skia
+      harness: skottie_json
+    - project: spring-boot
+      harness: BasicJsonParserFuzzer
+    - project: sudoers
+      harness: fuzz_iolog_json
+    - project: systemd
+      harness: fuzz-bootspec
+    - project: systemd
+      harness: fuzz-json
+    - project: systemd
+      harness: fuzz-nspawn-oci
+    - project: systemd
+      harness: fuzz-user-record
+    - project: timestamp-authority
+      harness: FuzzParseJSONRequest
+    - project: tinysparql
+      harness: fuzz_rdf_jsonld
+    - project: trafficserver
+      harness: fuzz_json
+    - project: unit
+      harness: fuzz_json
+    - project: valijson
+      harness: fuzzer
+    - project: vulkan-loader
+      harness: instance_create_advanced_fuzzer
+    - project: vulkan-loader
+      harness: instance_create_fuzzer
+    - project: vulkan-loader
+      harness: instance_enumerate_fuzzer
+    - project: vulkan-loader
+      harness: json_load_fuzzer
+    - project: vulkan-loader
+      harness: settings_fuzzer
+    - project: wireshark
+      harness: fuzzshark_media_type-json
+    - project: wt
+      harness: fuzz-json
+    - project: wuffs
+      harness: json_fuzzer
+    - project: xs
+      harness: xst_jsonparse
+    - project: yajl-ruby
+      harness: json_fuzzer
+    - project: yyjson
+      harness: yyjson_fuzzer
+    - project: yyjson
+      harness: yyjson_merge_patch_fuzzer
+
+  icc:
+    - project: lcms
+      harness: cmsIT8_load_fuzzer
+    - project: lcms
+      harness: cms_md5_fuzzer
+    - project: lcms
+      harness: cms_overwrite_transform_fuzzer
+    - project: lcms
+      harness: cms_postscript_fuzzer
+    - project: lcms
+      harness: cms_profile_fuzzer
+    - project: lcms
+      harness: cms_transform_all_fuzzer
+    - project: lcms
+      harness: cms_transform_extended_fuzzer
+    - project: lcms
+      harness: cms_transform_fuzzer
+    - project: lcms
+      harness: cms_universal_transform_fuzzer
+    - project: lcms
+      harness: cms_virtual_profile_fuzzer
+    - project: qcms
+      harness: fuzz
+    - project: qt
+      harness: qtbase_gui_painting_qcolorspace_fromiccprofile
+    - project: skia
+      harness: skcolorspace
+
+  jpg:
+    - project: apache-commons-imaging
+      harness: ImagingJpegFuzzer
+    - project: guetzli
+      harness: guetzli_fuzzer
+    - project: image-rs
+      harness: fuzzer_script_jpeg
+    - project: imagemagick
+      harness: encoder_jpg_fuzzer
+    - project: jpegoptim
+      harness: libjpeg_compression_fuzzer
+    - project: jpegoptim
+      harness: libjpegturbo_compression_fuzzer
+    - project: jpegoptim
+      harness: mozjpeg_compression_fuzzer
+    - project: kde-thumbnailers
+      harness: jpegthumbnail_fuzzer
+    - project: libexif
+      harness: exif_from_data_fuzzer
+    - project: libexif
+      harness: exif_loader_fuzzer
+    - project: libjpeg-turbo
+      harness: decompress_libjpeg_fuzzer
+    - project: libjpeg-turbo
+      harness: decompress_libjpeg_fuzzer_3_1_x
+    - project: libjpeg-turbo
+      harness: decompress_yuv_fuzzer
+    - project: libjpeg-turbo
+      harness: decompress_yuv_fuzzer_3_0_x
+    - project: libjpeg-turbo
+      harness: decompress_yuv_fuzzer_3_1_x
+    - project: libjpeg-turbo
+      harness: libjpeg_turbo_fuzzer
+    - project: libjpeg-turbo
+      harness: libjpeg_turbo_fuzzer_3_0_x
+    - project: libjpeg-turbo
+      harness: libjpeg_turbo_fuzzer_3_1_x
+    - project: libjpeg-turbo
+      harness: transform_fuzzer
+    - project: libjpeg-turbo
+      harness: transform_fuzzer_3_0_x
+    - project: libjpeg-turbo
+      harness: transform_fuzzer_3_1_x
+    - project: libreoffice
+      harness: jpgfuzzer
+    - project: qpdf
+      harness: dct_fuzzer
+    - project: qpdf
+      harness: future_dct_fuzzer
+    - project: wuffs
+      harness: jpeg_fuzzer
+
+  pcap:
+    - project: freeradius
+      harness: fuzzer_dns
+    - project: libpcap
+      harness: fuzz_pcap
+    - project: libyal
+      harness: libfwnt_security_descriptor_fuzzer
+    - project: nfstream
+      harness: pcap_fuzzer
+    - project: ntopng
+      harness: fuzz_dissect_packet
+    - project: pcapplusplus
+      harness: FuzzTarget
+    - project: pcapplusplus
+      harness: FuzzWriter
+    - project: suricata
+      harness: fuzz_decodepcapfile
+    - project: suricata
+      harness: fuzz_decodepcapfile7
+    - project: suricata
+      harness: fuzz_sigpcap
+    - project: zeek
+      harness: zeek-snmp-fuzzer
+
+  png:
+    - project: apache-commons-imaging
+      harness: ImagingPngFuzzer
+    - project: cairo
+      harness: cairo
+    - project: cairo
+      harness: font_fuzzer
+    - project: cairo
+      harness: multi_surface_fuzzer
+    - project: cairo
+      harness: pdf_surface_fuzzer
+    - project: cairo
+      harness: raster_fuzzer
+    - project: cairo
+      harness: script_interpreter_fuzzer
+    - project: cairo
+      harness: surface_write_png_fuzzer
+    - project: cairo
+      harness: text_glyphs_fuzzer
+    - project: fio
+      harness: fuzz_parseini
+    - project: golang
+      harness: fuzz_png_decode
+    - project: graphicsmagick
+      harness: coder_PNG_fuzzer
+    - project: image-png
+      harness: decode
+    - project: image-rs
+      harness: fuzzer_script_png
+    - project: imagemagick
+      harness: encoder_png_fuzzer
+    - project: kde-thumbnailers
+      harness: imagethumbnail_fuzzer
+    - project: kfilemetadata
+      harness: pngextractor_fuzzer
+    - project: leptonica
+      harness: pixa_recog_fuzzer
+    - project: libgd
+      harness: png_target
+    - project: libpng
+      harness: libpng_colormap_fuzzer
+    - project: libpng
+      harness: libpng_read_fuzzer
+    - project: libpng
+      harness: libpng_readapi_fuzzer
+    - project: libpng
+      harness: libpng_transformations_fuzzer
+    - project: libreoffice
+      harness: pngfuzzer
+    - project: libspng
+      harness: spng_read_fuzzer
+    - project: libspng
+      harness: spng_read_fuzzer_structure_aware
+    - project: lodepng
+      harness: lodepng_fuzzer
+    - project: ngolo-fuzzing
+      harness: fuzz_ngo_image_png
+    - project: pngquant
+      harness: fuzzer
+    - project: stb
+      harness: stb_png_read_fuzzer
+    - project: wuffs
+      harness: png_fuzzer
+
+  xml:
+    - project: apache-commons-configuration
+      harness: XMLConfigurationLoadFuzzer
+    - project: apache-commons-io
+      harness: XmlFuzzer
+    - project: apache-commons-jxpath
+      harness: JXPathFuzzer
+    - project: apache-cxf
+      harness: XMLStreamReadersFuzzer
+    - project: apache-logging-log4cxx
+      harness: DOMConfiguratorFuzzer
+    - project: apache-tika
+      harness: XMLReaderUtilsFuzzer
+    - project: cmake
+      harness: xml_parser_fuzzer
+    - project: cpython3
+      harness: fuzz_elementtree_parsewhole
+    - project: cyclonedds
+      harness: fuzz_config_init
+    - project: dlplibs
+      harness: abwfuzzer
+    - project: dlplibs
+      harness: fb2fuzzer
+    - project: dlplibs
+      harness: vdxfuzzer
+    - project: dom4j
+      harness: DOMReaderFuzzer
+    - project: fast-dds
+      harness: fuzz_XMLProfiles
+    - project: gdal
+      harness: lvbag_fuzzer
+    - project: igraph
+      harness: read_graphml
+    - project: igraph
+      harness: write_all_graphml
+    - project: jackson-dataformat-xml
+      harness: XmlFuzzer
+    - project: jdom
+      harness: SAXBuilderFuzzer
+    - project: jsoup
+      harness: XmlFuzzer
+    - project: keycloak
+      harness: SamlParserFuzzer
+    - project: libreoffice
+      harness: fodgfuzzer
+    - project: libreoffice
+      harness: fodpfuzzer
+    - project: libreoffice
+      harness: fods2xlsfuzzer
+    - project: libreoffice
+      harness: fodsfuzzer
+    - project: libreoffice
+      harness: fodt2pdffuzzer
+    - project: libreoffice
+      harness: fodtfuzzer
+    - project: libreoffice
+      harness: mmlfuzzer
+    - project: libxml2
+      harness: lint
+    - project: libxml2
+      harness: xml
+    - project: libyal
+      harness: libwrc_manifest_resource_fuzzer
+    - project: libyang
+      harness: lyd_parse_schema_mount_xml
+    - project: logback
+      harness: JoranFuzzer
+    - project: networkx
+      harness: fuzz_graphml
+    - project: pidgin
+      harness: pidgin_xml_fuzzer
+    - project: pjsip
+      harness: fuzz-presence
+    - project: pjsip
+      harness: fuzz-xml
+    - project: plexus-utils
+      harness: MXParserFuzzer
+    - project: plexus-utils
+      harness: XmlStreamReaderFuzzer
+    - project: pugixml
+      harness: fuzz_parse
+    - project: pugixml
+      harness: fuzz_xpath
+    - project: pupnp
+      harness: FuzzIxml
+    - project: python3-libraries
+      harness: fuzzer-xml
+    - project: pyxdg
+      harness: fuzz_menu
+    - project: rome
+      harness: XmlReaderFuzzer
+    - project: spring-framework
+      harness: XmlApplicationContextFuzzer
+    - project: teleport
+      harness: fuzz_parse_saml_in_response_to
+    - project: vlc
+      harness: vlc-demux-dec-libfuzzer-ttml
+    - project: woodstox
+      harness: XmlFuzzer
+    - project: wt
+      harness: fuzz-xml
+    - project: xmlsec
+      harness: xmlsec_dsig_verify_fuzzer
+    - project: xstream
+      harness: XmlFuzzer
+
+  phpt:
+    - project: php
+      harness: php-fuzz-execute
+    - project: php
+      harness: php-fuzz-function-jit
+    - project: php
+      harness: php-fuzz-parser
+    - project: php
+      harness: php-fuzz-tracing-jit
+
+  ogg:
+    - project: vlc
+      harness: vlc-demux-dec-libfuzzer-ogg
+    - project: vorbis
+      harness: decode_fuzzer
+
+  woff2:
+    - project: woff2
+      harness: convert_woff2ttf_fuzzer
+    - project: woff2
+      harness: convert_woff2ttf_fuzzer_new_entry
+
+  zlib:
+    - project: wuffs
+      harness: zlib_fuzzer
+    - project: zlib
+      harness: zlib_uncompress2_fuzzer
+    - project: zlib
+      harness: zlib_uncompress_fuzzer

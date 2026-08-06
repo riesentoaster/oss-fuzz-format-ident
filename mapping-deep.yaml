@@ -1,0 +1,10 @@
+- ext: json
+- ext: icc
+- ext: jpg
+- ext: pcap
+- ext: png
+- ext: xml
+- ext: phpt
+- ext: ogg
+- ext: woff2
+- ext: zlib
